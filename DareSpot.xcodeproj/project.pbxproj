@@ -18,6 +18,7 @@
 		EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */; };
 		EE38AAA21F6E948000DB5EDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE38AAA11F6E948000DB5EDD /* GoogleService-Info.plist */; };
 		EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */; };
+		EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AAA51F6F2C5400DB5EDD /* UserInformation.swift */; };
 		EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */; };
 		EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC199231F6E744A00F981E6 /* Main.storyboard */; };
 		EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */; };
@@ -63,6 +64,7 @@
 		EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		EE38AAA11F6E948000DB5EDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSaveData.swift; sourceTree = "<group>"; };
+		EE38AAA51F6F2C5400DB5EDD /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		EEC1991C1F6E744A00F981E6 /* DareSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DareSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEC199241F6E744A00F981E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */,
 				EEC199521F6E77E600F981E6 /* Images */,
 				EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */,
+				EE38AAA51F6F2C5400DB5EDD /* UserInformation.swift */,
 			);
 			path = DareSpot;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */,
 				EE38AA9A1F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift in Sources */,
 				EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */,
+				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
 				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,

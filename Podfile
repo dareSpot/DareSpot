@@ -20,4 +20,5 @@ target 'DareSpot' do
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/Core'
 end

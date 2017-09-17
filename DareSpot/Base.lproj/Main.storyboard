@@ -155,7 +155,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnj-2C-4hv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.826086956522" y="851.9021739130435"/>
+            <point key="canvasLocation" x="1101" y="1661"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="03h-Sl-dmD">
+            <objects>
+                <viewController id="2y1-Hw-OMU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iBj-XQ-GSh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fsi-dF-ooJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pvP-M3-ea8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5W-rf-OUn">
+                                <rect key="frame" x="20" y="111" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNp-JX-rbd">
+                                <rect key="frame" x="143" y="208" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go To Login"/>
+                                <connections>
+                                    <segue destination="v7r-YI-Hq3" kind="show" id="dIX-k1-tEh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6as-d7-S9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289.8550724637685" y="893.47826086956525"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AeG-rs-P6B">
@@ -173,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmD-Fh-xLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2623" y="852"/>
+            <point key="canvasLocation" x="2432" y="1822"/>
         </scene>
         <!--Sign Up Email View Controller-->
         <scene sceneID="TNH-Yj-lNy">
@@ -221,7 +256,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="v7k-mz-oPW" eventType="touchUpInside" id="vKM-KP-fyE"/>
-                                    <segue destination="F5Y-81-p5A" kind="show" id="XJw-Jz-Mzm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVi-zm-9Ux">
@@ -257,6 +291,8 @@
                         <outlet property="emailErrorMessageLabel" destination="OVi-zm-9Ux" id="cLB-bN-U9P"/>
                         <outlet property="emailTextField" destination="rNe-mU-n6J" id="B9t-YQ-Num"/>
                         <outlet property="nextButton" destination="Je5-Ao-Y4j" id="erG-dU-eRI"/>
+                        <segue destination="2y1-Hw-OMU" kind="show" identifier="userExistSegue" id="0TG-5g-RZw"/>
+                        <segue destination="F5Y-81-p5A" kind="show" identifier="signUPSegue" id="jiX-zL-v8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOn-oi-wnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,7 +343,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NnI-Xv-9xe" kind="show" id="WBn-EI-Aa8"/>
+                                    <action selector="nextButtonPressed:" destination="F5Y-81-p5A" eventType="touchUpInside" id="NEU-QP-pPP"/>
+                                    <segue destination="NnI-Xv-9xe" kind="show" id="xdt-3U-7Jl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x9-JG-IKD">
@@ -350,6 +387,10 @@
                             <constraint firstItem="IqJ-pF-qDI" firstAttribute="top" secondItem="7J1-uG-7VC" secondAttribute="bottom" constant="8" symbolic="YES" id="tpn-0l-MKY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="SKg-b6-jhI" id="Ugf-FA-8BU"/>
+                        <outlet property="lastNameTextField" destination="7J1-uG-7VC" id="ZeX-KM-oq1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac5-O9-SK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,7 +422,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bRR-Ty-vty" kind="show" id="KCa-FU-aTS"/>
+                                    <action selector="nextButtonPressed:" destination="NnI-Xv-9xe" eventType="touchUpInside" id="oim-Pd-NJN"/>
+                                    <segue destination="bRR-Ty-vty" kind="show" id="Mpi-0H-ZZa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -432,7 +474,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="U0b-4A-9Sy" kind="show" id="UUM-Os-IoR"/>
+                                    <action selector="nextButtonPressed:" destination="bRR-Ty-vty" eventType="touchUpInside" id="UFc-C5-aMk"/>
+                                    <segue destination="U0b-4A-9Sy" kind="show" id="gpQ-8f-ThN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao7-IM-Hqh">
@@ -459,6 +502,9 @@
                             <constraint firstItem="7gK-Mc-Z4g" firstAttribute="top" secondItem="VFG-9w-rhd" secondAttribute="bottom" constant="8" symbolic="YES" id="p2s-a4-gx6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="usernameTextField" destination="7gK-Mc-Z4g" id="464-Ru-zGS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXy-cp-wF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,7 +554,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qbY-1t-fmg" kind="show" id="a9J-LR-VUG"/>
+                                    <action selector="registerButtonPressed:" destination="U0b-4A-9Sy" eventType="touchUpInside" id="2vb-gu-Fcg"/>
+                                    <segue destination="qbY-1t-fmg" kind="show" id="DRN-DQ-L7z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q91-f9-6Kr">
@@ -551,6 +598,10 @@
                             <constraint firstItem="Imc-Z9-e86" firstAttribute="trailing" secondItem="jfb-70-HQn" secondAttribute="trailing" id="yCJ-ue-qZQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="jfb-70-HQn" id="aqB-l9-ahR"/>
+                        <outlet property="passwordTextField" destination="ul4-lD-jnc" id="OhO-8p-lL5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwG-Vl-yBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -597,6 +648,6 @@
         <image name="dareSpot" width="339" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mjo-d8-3Ki"/>
+        <segue reference="on9-xm-9tf"/>
     </inferredMetricsTieBreakers>
 </document>

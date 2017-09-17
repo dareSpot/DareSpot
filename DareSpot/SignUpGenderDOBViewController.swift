@@ -10,9 +10,16 @@ import UIKit
 
 class SignUpGenderDOBViewController: UIViewController {
 
+  
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        UserInformation.userInformationInstance.dOB  = "05/13/1990"
+        UserInformation.userInformationInstance.gender = "Female"
+        
+    }
   
 }
