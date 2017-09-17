@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */; };
+		EEC199221F6E744A00F981E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199211F6E744A00F981E6 /* ViewController.swift */; };
+		EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC199231F6E744A00F981E6 /* Main.storyboard */; };
+		EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */; };
+		EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC199291F6E744A00F981E6 /* Assets.xcassets */; };
+		EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */; };
+		EEC199381F6E744B00F981E6 /* DareSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199371F6E744B00F981E6 /* DareSpotTests.swift */; };
+		EEC199431F6E744B00F981E6 /* DareSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199421F6E744B00F981E6 /* DareSpotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEC199341F6E744B00F981E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEC199141F6E744A00F981E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC1991B1F6E744A00F981E6;
+			remoteInfo = DareSpot;
+		};
+		EEC1993F1F6E744B00F981E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEC199141F6E744A00F981E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC1991B1F6E744A00F981E6;
+			remoteInfo = DareSpot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EEC1991C1F6E744A00F981E6 /* DareSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DareSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEC199211F6E744A00F981E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEC199241F6E744A00F981E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEC199271F6E744A00F981E6 /* DareSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DareSpot.xcdatamodel; sourceTree = "<group>"; };
+		EEC199291F6E744A00F981E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEC1992C1F6E744A00F981E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEC1992E1F6E744A00F981E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC199331F6E744B00F981E6 /* DareSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC199371F6E744B00F981E6 /* DareSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareSpotTests.swift; sourceTree = "<group>"; };
+		EEC199391F6E744B00F981E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC1993E1F6E744B00F981E6 /* DareSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC199421F6E744B00F981E6 /* DareSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareSpotUITests.swift; sourceTree = "<group>"; };
+		EEC199441F6E744B00F981E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEC199191F6E744A00F981E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC199301F6E744B00F981E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC1993B1F6E744B00F981E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEC199131F6E744A00F981E6 = {
+			isa = PBXGroup;
+			children = (
+				EEC1991E1F6E744A00F981E6 /* DareSpot */,
+				EEC199361F6E744B00F981E6 /* DareSpotTests */,
+				EEC199411F6E744B00F981E6 /* DareSpotUITests */,
+				EEC1991D1F6E744A00F981E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEC1991D1F6E744A00F981E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1991C1F6E744A00F981E6 /* DareSpot.app */,
+				EEC199331F6E744B00F981E6 /* DareSpotTests.xctest */,
+				EEC1993E1F6E744B00F981E6 /* DareSpotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
+				EEC199211F6E744A00F981E6 /* ViewController.swift */,
+				EEC199231F6E744A00F981E6 /* Main.storyboard */,
+				EEC199291F6E744A00F981E6 /* Assets.xcassets */,
+				EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */,
+				EEC1992E1F6E744A00F981E6 /* Info.plist */,
+				EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */,
+			);
+			path = DareSpot;
+			sourceTree = "<group>";
+		};
+		EEC199361F6E744B00F981E6 /* DareSpotTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEC199371F6E744B00F981E6 /* DareSpotTests.swift */,
+				EEC199391F6E744B00F981E6 /* Info.plist */,
+			);
+			path = DareSpotTests;
+			sourceTree = "<group>";
+		};
+		EEC199411F6E744B00F981E6 /* DareSpotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EEC199421F6E744B00F981E6 /* DareSpotUITests.swift */,
+				EEC199441F6E744B00F981E6 /* Info.plist */,
+			);
+			path = DareSpotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEC1991B1F6E744A00F981E6 /* DareSpot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC199471F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpot" */;
+			buildPhases = (
+				EEC199181F6E744A00F981E6 /* Sources */,
+				EEC199191F6E744A00F981E6 /* Frameworks */,
+				EEC1991A1F6E744A00F981E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DareSpot;
+			productName = DareSpot;
+			productReference = EEC1991C1F6E744A00F981E6 /* DareSpot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEC199321F6E744B00F981E6 /* DareSpotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC1994A1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotTests" */;
+			buildPhases = (
+				EEC1992F1F6E744B00F981E6 /* Sources */,
+				EEC199301F6E744B00F981E6 /* Frameworks */,
+				EEC199311F6E744B00F981E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEC199351F6E744B00F981E6 /* PBXTargetDependency */,
+			);
+			name = DareSpotTests;
+			productName = DareSpotTests;
+			productReference = EEC199331F6E744B00F981E6 /* DareSpotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EEC1993D1F6E744B00F981E6 /* DareSpotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC1994D1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotUITests" */;
+			buildPhases = (
+				EEC1993A1F6E744B00F981E6 /* Sources */,
+				EEC1993B1F6E744B00F981E6 /* Frameworks */,
+				EEC1993C1F6E744B00F981E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEC199401F6E744B00F981E6 /* PBXTargetDependency */,
+			);
+			name = DareSpotUITests;
+			productName = DareSpotUITests;
+			productReference = EEC1993E1F6E744B00F981E6 /* DareSpotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEC199141F6E744A00F981E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Mrunalini;
+				TargetAttributes = {
+					EEC1991B1F6E744A00F981E6 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6B8872JNR9;
+						ProvisioningStyle = Automatic;
+					};
+					EEC199321F6E744B00F981E6 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6B8872JNR9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EEC1991B1F6E744A00F981E6;
+					};
+					EEC1993D1F6E744B00F981E6 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6B8872JNR9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EEC1991B1F6E744A00F981E6;
+					};
+				};
+			};
+			buildConfigurationList = EEC199171F6E744A00F981E6 /* Build configuration list for PBXProject "DareSpot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEC199131F6E744A00F981E6;
+			productRefGroup = EEC1991D1F6E744A00F981E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEC1991B1F6E744A00F981E6 /* DareSpot */,
+				EEC199321F6E744B00F981E6 /* DareSpotTests */,
+				EEC1993D1F6E744B00F981E6 /* DareSpotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEC1991A1F6E744A00F981E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */,
+				EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */,
+				EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC199311F6E744B00F981E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC1993C1F6E744B00F981E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEC199181F6E744A00F981E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC199221F6E744A00F981E6 /* ViewController.swift in Sources */,
+				EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */,
+				EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC1992F1F6E744B00F981E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC199381F6E744B00F981E6 /* DareSpotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC1993A1F6E744B00F981E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC199431F6E744B00F981E6 /* DareSpotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEC199351F6E744B00F981E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC1991B1F6E744A00F981E6 /* DareSpot */;
+			targetProxy = EEC199341F6E744B00F981E6 /* PBXContainerItemProxy */;
+		};
+		EEC199401F6E744B00F981E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC1991B1F6E744A00F981E6 /* DareSpot */;
+			targetProxy = EEC1993F1F6E744B00F981E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEC199231F6E744A00F981E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC199241F6E744A00F981E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC1992C1F6E744A00F981E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEC199451F6E744B00F981E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEC199461F6E744B00F981E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEC199481F6E744B00F981E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EEC199491F6E744B00F981E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EEC1994B1F6E744B00F981E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DareSpot.app/DareSpot";
+			};
+			name = Debug;
+		};
+		EEC1994C1F6E744B00F981E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DareSpot.app/DareSpot";
+			};
+			name = Release;
+		};
+		EEC1994E1F6E744B00F981E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DareSpot;
+			};
+			name = Debug;
+		};
+		EEC1994F1F6E744B00F981E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 6B8872JNR9;
+				INFOPLIST_FILE = DareSpotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DareSpot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEC199171F6E744A00F981E6 /* Build configuration list for PBXProject "DareSpot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC199451F6E744B00F981E6 /* Debug */,
+				EEC199461F6E744B00F981E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC199471F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC199481F6E744B00F981E6 /* Debug */,
+				EEC199491F6E744B00F981E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EEC1994A1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC1994B1F6E744B00F981E6 /* Debug */,
+				EEC1994C1F6E744B00F981E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EEC1994D1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC1994E1F6E744B00F981E6 /* Debug */,
+				EEC1994F1F6E744B00F981E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEC199271F6E744A00F981E6 /* DareSpot.xcdatamodel */,
+			);
+			currentVersion = EEC199271F6E744A00F981E6 /* DareSpot.xcdatamodel */;
+			path = DareSpot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EEC199141F6E744A00F981E6 /* Project object */;
+}
