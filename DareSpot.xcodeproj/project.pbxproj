@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6608B01CFBFE421789756E87 /* Pods_DareSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1E2E30D507E8CF48AEA95 /* Pods_DareSpotTests.framework */; };
+		6DE13714555204E80BCAFF90 /* Pods_DareSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD7767EE1DF94FE9144D298 /* Pods_DareSpot.framework */; };
+		8321B83EBA7828CDC948C8F5 /* Pods_DareSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */; };
+		EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA951F6E8AF900DB5EDD /* SignUpEmailViewController.swift */; };
+		EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA971F6E8B2800DB5EDD /* SignUpNameViewController.swift */; };
+		EE38AA9A1F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA991F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift */; };
+		EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */; };
+		EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA9D1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift */; };
+		EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */; };
+		EE38AAA21F6E948000DB5EDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE38AAA11F6E948000DB5EDD /* GoogleService-Info.plist */; };
+		EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */; };
 		EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */; };
-		EEC199221F6E744A00F981E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199211F6E744A00F981E6 /* ViewController.swift */; };
 		EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC199231F6E744A00F981E6 /* Main.storyboard */; };
 		EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */; };
 		EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC199291F6E744A00F981E6 /* Assets.xcassets */; };
 		EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */; };
 		EEC199381F6E744B00F981E6 /* DareSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199371F6E744B00F981E6 /* DareSpotTests.swift */; };
 		EEC199431F6E744B00F981E6 /* DareSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC199421F6E744B00F981E6 /* DareSpotUITests.swift */; };
+		EEC199541F6E781400F981E6 /* dareSpotLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EEC199531F6E781400F981E6 /* dareSpotLogo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +46,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C37BFEA00FA60F7023E7FC7 /* Pods-DareSpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		25BBAFB043FEE7978A63E089 /* Pods-DareSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DareSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E84177247FBA11C937219D /* Pods-DareSpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests.release.xcconfig"; sourceTree = "<group>"; };
+		9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot.debug.xcconfig"; sourceTree = "<group>"; };
+		ABB1E2E30D507E8CF48AEA95 /* Pods_DareSpotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DareSpotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD7767EE1DF94FE9144D298 /* Pods_DareSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DareSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF2F11B434924E451D177AA /* Pods-DareSpotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D85564A78502E5BE9B3C08FF /* Pods-DareSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot.release.xcconfig"; sourceTree = "<group>"; };
+		EE38AA951F6E8AF900DB5EDD /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		EE38AA971F6E8B2800DB5EDD /* SignUpNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
+		EE38AA991F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderDOBViewController.swift; sourceTree = "<group>"; };
+		EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		EE38AA9D1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUsernameViewController.swift; sourceTree = "<group>"; };
+		EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		EE38AAA11F6E948000DB5EDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSaveData.swift; sourceTree = "<group>"; };
 		EEC1991C1F6E744A00F981E6 /* DareSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DareSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEC199211F6E744A00F981E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEC199241F6E744A00F981E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEC199271F6E744A00F981E6 /* DareSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DareSpot.xcdatamodel; sourceTree = "<group>"; };
 		EEC199291F6E744A00F981E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +76,7 @@
 		EEC1993E1F6E744B00F981E6 /* DareSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC199421F6E744B00F981E6 /* DareSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareSpotUITests.swift; sourceTree = "<group>"; };
 		EEC199441F6E744B00F981E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC199531F6E781400F981E6 /* dareSpotLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dareSpotLogo.jpg; path = ../../../Downloads/dareSpotLogo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE13714555204E80BCAFF90 /* Pods_DareSpot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6608B01CFBFE421789756E87 /* Pods_DareSpotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +100,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8321B83EBA7828CDC948C8F5 /* Pods_DareSpotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		099034E7AFE4D966777F02D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACD7767EE1DF94FE9144D298 /* Pods_DareSpot.framework */,
+				ABB1E2E30D507E8CF48AEA95 /* Pods_DareSpotTests.framework */,
+				4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4957BDDBC4BE8BB57F7884C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */,
+				D85564A78502E5BE9B3C08FF /* Pods-DareSpot.release.xcconfig */,
+				BEF2F11B434924E451D177AA /* Pods-DareSpotTests.debug.xcconfig */,
+				84E84177247FBA11C937219D /* Pods-DareSpotTests.release.xcconfig */,
+				25BBAFB043FEE7978A63E089 /* Pods-DareSpotUITests.debug.xcconfig */,
+				1C37BFEA00FA60F7023E7FC7 /* Pods-DareSpotUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE38AA941F6E8AB700DB5EDD /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EE38AA951F6E8AF900DB5EDD /* SignUpEmailViewController.swift */,
+				EE38AA971F6E8B2800DB5EDD /* SignUpNameViewController.swift */,
+				EE38AA991F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift */,
+				EE38AA9D1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift */,
+				EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */,
+				EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
 		EEC199131F6E744A00F981E6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +150,8 @@
 				EEC199361F6E744B00F981E6 /* DareSpotTests */,
 				EEC199411F6E744B00F981E6 /* DareSpotUITests */,
 				EEC1991D1F6E744A00F981E6 /* Products */,
+				4957BDDBC4BE8BB57F7884C1 /* Pods */,
+				099034E7AFE4D966777F02D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +168,16 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				EE38AA941F6E8AB700DB5EDD /* SignUp */,
 				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
-				EEC199211F6E744A00F981E6 /* ViewController.swift */,
 				EEC199231F6E744A00F981E6 /* Main.storyboard */,
 				EEC199291F6E744A00F981E6 /* Assets.xcassets */,
 				EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */,
+				EE38AAA11F6E948000DB5EDD /* GoogleService-Info.plist */,
 				EEC1992E1F6E744A00F981E6 /* Info.plist */,
 				EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */,
+				EEC199521F6E77E600F981E6 /* Images */,
+				EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */,
 			);
 			path = DareSpot;
 			sourceTree = "<group>";
@@ -128,6 +200,14 @@
 			path = DareSpotUITests;
 			sourceTree = "<group>";
 		};
+		EEC199521F6E77E600F981E6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EEC199531F6E781400F981E6 /* dareSpotLogo.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEC199471F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpot" */;
 			buildPhases = (
+				A39B7AFB011456972E1C8175 /* [CP] Check Pods Manifest.lock */,
 				EEC199181F6E744A00F981E6 /* Sources */,
 				EEC199191F6E744A00F981E6 /* Frameworks */,
 				EEC1991A1F6E744A00F981E6 /* Resources */,
+				C539C9DACB43956BEBC3EF38 /* [CP] Embed Pods Frameworks */,
+				94EF7C10A6DBEF6B0446B474 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +235,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEC1994A1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotTests" */;
 			buildPhases = (
+				C500E48C32EA29E513EBCF57 /* [CP] Check Pods Manifest.lock */,
 				EEC1992F1F6E744B00F981E6 /* Sources */,
 				EEC199301F6E744B00F981E6 /* Frameworks */,
 				EEC199311F6E744B00F981E6 /* Resources */,
+				1EF469C229EBD5952ECEA9B3 /* [CP] Embed Pods Frameworks */,
+				9A29A88535FA9202D23B0EA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEC1994D1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotUITests" */;
 			buildPhases = (
+				84986D7BE6F34A0D1687830D /* [CP] Check Pods Manifest.lock */,
 				EEC1993A1F6E744B00F981E6 /* Sources */,
 				EEC1993B1F6E744B00F981E6 /* Frameworks */,
 				EEC1993C1F6E744B00F981E6 /* Resources */,
+				5A939AF759C84871B3B85CA2 /* [CP] Embed Pods Frameworks */,
+				36DFBA6BA6212AC2114622A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +329,8 @@
 			files = (
 				EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */,
 				EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */,
+				EE38AAA21F6E948000DB5EDD /* GoogleService-Info.plist in Resources */,
+				EEC199541F6E781400F981E6 /* dareSpotLogo.jpg in Resources */,
 				EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +351,176 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EF469C229EBD5952ECEA9B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36DFBA6BA6212AC2114622A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A939AF759C84871B3B85CA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84986D7BE6F34A0D1687830D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DareSpotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94EF7C10A6DBEF6B0446B474 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A29A88535FA9202D23B0EA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A39B7AFB011456972E1C8175 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DareSpot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C500E48C32EA29E513EBCF57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DareSpotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C539C9DACB43956BEBC3EF38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EEC199181F6E744A00F981E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC199221F6E744A00F981E6 /* ViewController.swift in Sources */,
 				EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */,
+				EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */,
+				EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */,
+				EE38AA9A1F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift in Sources */,
 				EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */,
+				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
+				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
+				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,
+				EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +672,7 @@
 		};
 		EEC199481F6E744B00F981E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6B8872JNR9;
@@ -432,6 +686,7 @@
 		};
 		EEC199491F6E744B00F981E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D85564A78502E5BE9B3C08FF /* Pods-DareSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6B8872JNR9;
@@ -445,6 +700,7 @@
 		};
 		EEC1994B1F6E744B00F981E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEF2F11B434924E451D177AA /* Pods-DareSpotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +716,7 @@
 		};
 		EEC1994C1F6E744B00F981E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E84177247FBA11C937219D /* Pods-DareSpotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +732,7 @@
 		};
 		EEC1994E1F6E744B00F981E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25BBAFB043FEE7978A63E089 /* Pods-DareSpotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6B8872JNR9;
@@ -489,6 +747,7 @@
 		};
 		EEC1994F1F6E744B00F981E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C37BFEA00FA60F7023E7FC7 /* Pods-DareSpotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6B8872JNR9;
@@ -520,6 +779,7 @@
 				EEC199491F6E744B00F981E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEC1994A1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +788,7 @@
 				EEC1994C1F6E744B00F981E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEC1994D1F6E744B00F981E6 /* Build configuration list for PBXNativeTarget "DareSpotUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +797,7 @@
 				EEC1994F1F6E744B00F981E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
