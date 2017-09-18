@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C0511D61F6F84F50015FA01 /* SignInUserExistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D51F6F84F50015FA01 /* SignInUserExistViewController.swift */; };
+		3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */; };
 		6608B01CFBFE421789756E87 /* Pods_DareSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1E2E30D507E8CF48AEA95 /* Pods_DareSpotTests.framework */; };
 		6DE13714555204E80BCAFF90 /* Pods_DareSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD7767EE1DF94FE9144D298 /* Pods_DareSpot.framework */; };
 		8321B83EBA7828CDC948C8F5 /* Pods_DareSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */; };
@@ -51,6 +52,7 @@
 		1C37BFEA00FA60F7023E7FC7 /* Pods-DareSpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		25BBAFB043FEE7978A63E089 /* Pods-DareSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0511D51F6F84F50015FA01 /* SignInUserExistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInUserExistViewController.swift; path = ../SignInUserExistViewController.swift; sourceTree = "<group>"; };
+		3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSuccessfullViewController.swift; sourceTree = "<group>"; };
 		4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DareSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E84177247FBA11C937219D /* Pods-DareSpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				EE38AA9D1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift */,
 				EE38AA9F1F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift */,
 				EE38AAA31F6EE85500DB5EDD /* SignUpSaveData.swift */,
+				3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */,
 			);
 			name = SignUp;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
+				3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */,
 				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,
 				EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */,
 			);

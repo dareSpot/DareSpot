@@ -607,10 +607,10 @@
             </objects>
             <point key="canvasLocation" x="5123.188405797102" y="142.66304347826087"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Successfull View Controller-->
         <scene sceneID="a6L-Zg-RWI">
             <objects>
-                <viewController id="qbY-1t-fmg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpSuccessfullVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbY-1t-fmg" customClass="SignUpSuccessfullViewController" customModule="DareSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uQv-Rc-Sdv"/>
                         <viewControllerLayoutGuide type="bottom" id="cwh-kX-EaF"/>

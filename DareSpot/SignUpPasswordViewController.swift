@@ -27,7 +27,6 @@ class SignUpPasswordViewController: UIViewController {
         print("UserInformation.userInformationInstance.phone = \(String(describing: UserInformation.userInformationInstance.phoneNumber))")
     }
 
-
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         
         if let password = self.passwordTextField.text, let comfirmPassword1 = self.confirmPasswordTextField.text {
@@ -52,7 +51,7 @@ class SignUpPasswordViewController: UIViewController {
                     print("You have successfully signed up")
                     self.addUserInformation(uid: (user?.uid)!)
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "signUpSuccessfullVC")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
