@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class SignUpEmailViewController: UIViewController
 {
@@ -42,6 +43,11 @@ class SignUpEmailViewController: UIViewController
         }
     }
     
+    func goToUserExistViewController() {
+        
+        performSegue(withIdentifier: "userExistSegue", sender: nil)
+    }
+    
     func goToSignUpNameViewController() {
         performSegue(withIdentifier: "signUPSegue", sender: nil)
     }
@@ -54,12 +60,47 @@ class SignUpEmailViewController: UIViewController
                 }
             }
         }
+        else {
+            if segue.identifier == "userExistSegue" {
+                if let destination =  segue.destination as? SignInUserExistViewController {
+                    if emailTextField != nil {
+                        destination.emailTextField = self.emailTextField.text
+                        
+                    }
+                }
+            }
+        }
     }
     
     
-    
+    func checkAccount(email: String) {
+        
+        Auth.auth().fetchProviders(forEmail: email, completion: { (stringArray, error) in
+            if error != nil {
+                print(error!)
+            } else {
+                if stringArray == nil {
+                    print("No password. No active account")
+                    self.goToSignUpNameViewController()
+
+                } else {
+                    print("There is an active account")
+                    self.goToUserExistViewController()
+                    
+                }
+            }
+        })
+    }
+   
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-           goToSignUpNameViewController()
+        
+         if let email = self.emailTextField.text {
+            self.checkAccount(email: email)
+        }
+        else {
+            
+            return
+        }
     }
 }
 
