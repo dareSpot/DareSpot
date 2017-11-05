@@ -11,6 +11,9 @@
 		3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */; };
 		3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */; };
 		3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */; };
+		3CF6B2FD1FAFBA000039430A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FA1FAFBA000039430A /* Contents.json */; };
+		3CF6B2FE1FAFBA000039430A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FB1FAFBA000039430A /* email.png */; };
+		3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FC1FAFBA000039430A /* email@2x.png */; };
 		6608B01CFBFE421789756E87 /* Pods_DareSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1E2E30D507E8CF48AEA95 /* Pods_DareSpotTests.framework */; };
 		6DE13714555204E80BCAFF90 /* Pods_DareSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD7767EE1DF94FE9144D298 /* Pods_DareSpot.framework */; };
 		8321B83EBA7828CDC948C8F5 /* Pods_DareSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */; };
@@ -56,6 +59,9 @@
 		3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSuccessfullViewController.swift; sourceTree = "<group>"; };
 		3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3CF6B2FA1FAFBA000039430A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		3CF6B2FB1FAFBA000039430A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		3CF6B2FC1FAFBA000039430A /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
 		4AAD91DDCDB99D8F2BABB510 /* Pods_DareSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DareSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E84177247FBA11C937219D /* Pods-DareSpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotTests/Pods-DareSpotTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,11 +139,14 @@
 			name = SignIn;
 			sourceTree = "<group>";
 		};
-		3C1594721F763E6500F10294 /* FirebaseMethods */ = {
+		3CF6B2F91FAFBA000039430A /* email.imageset */ = {
 			isa = PBXGroup;
 			children = (
+				3CF6B2FA1FAFBA000039430A /* Contents.json */,
+				3CF6B2FB1FAFBA000039430A /* email.png */,
+				3CF6B2FC1FAFBA000039430A /* email@2x.png */,
 			);
-			name = FirebaseMethods;
+			path = email.imageset;
 			sourceTree = "<group>";
 		};
 		4957BDDBC4BE8BB57F7884C1 /* Pods */ = {
@@ -171,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */,
-				3C1594721F763E6500F10294 /* FirebaseMethods */,
 				EEC1991E1F6E744A00F981E6 /* DareSpot */,
 				EEC199361F6E744B00F981E6 /* DareSpotTests */,
 				EEC199411F6E744B00F981E6 /* DareSpotUITests */,
@@ -199,6 +207,7 @@
 				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
 				EEC199231F6E744A00F981E6 /* Main.storyboard */,
 				EEC199291F6E744A00F981E6 /* Assets.xcassets */,
+				3CF6B2F91FAFBA000039430A /* email.imageset */,
 				EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */,
 				EEC1992E1F6E744A00F981E6 /* Info.plist */,
 				3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */,
@@ -356,10 +365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */,
+				3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */,
 				EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */,
 				EEC199541F6E781400F981E6 /* dareSpotLogo.jpg in Resources */,
 				3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */,
 				EEC199251F6E744A00F981E6 /* Main.storyboard in Resources */,
+				3CF6B2FD1FAFBA000039430A /* Contents.json in Resources */,
+				3CF6B2FE1FAFBA000039430A /* email.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +528,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DareSpot/Pods-DareSpot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DialogBox/DialogBox.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -523,6 +536,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DialogBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",

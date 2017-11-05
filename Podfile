@@ -21,4 +21,5 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Core'
+pod 'DialogBox'
 end

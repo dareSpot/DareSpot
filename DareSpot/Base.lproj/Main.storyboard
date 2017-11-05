@@ -236,31 +236,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYI-zu-Ysh">
-                                <rect key="frame" x="25" y="28" width="364" height="21"/>
+                                <rect key="frame" x="25" y="72" width="364" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.23897649809999999" green="0.67256314770000003" blue="0.62186876560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLs-37-IEm">
-                                <rect key="frame" x="25" y="127" width="364" height="21"/>
+                                <rect key="frame" x="25" y="171" width="364" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.23897649809999999" green="0.67256314770000003" blue="0.62186876560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPU-g4-WRO">
-                                <rect key="frame" x="25" y="156" width="364" height="30"/>
+                                <rect key="frame" x="25" y="200" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jif-Vi-RAR">
-                                <rect key="frame" x="25" y="57" width="364" height="30"/>
+                                <rect key="frame" x="25" y="101" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTT-Ad-0kT">
-                                <rect key="frame" x="25" y="213" width="364" height="36"/>
+                                <rect key="frame" x="25" y="257" width="364" height="36"/>
                                 <color key="backgroundColor" red="0.085462543799999999" green="0.7240730246" blue="0.46184058919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Register">
@@ -678,7 +678,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="U0b-4A-9Sy" eventType="touchUpInside" id="2vb-gu-Fcg"/>
-                                    <segue destination="qbY-1t-fmg" kind="show" id="DRN-DQ-L7z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q91-f9-6Kr">
@@ -724,6 +723,7 @@
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="jfb-70-HQn" id="aqB-l9-ahR"/>
                         <outlet property="passwordTextField" destination="ul4-lD-jnc" id="OhO-8p-lL5"/>
+                        <segue destination="qbY-1t-fmg" kind="show" identifier="signUpDone" id="SzP-2i-Dkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwG-Vl-yBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -733,7 +733,7 @@
         <!--Sign Up Successfull View Controller-->
         <scene sceneID="a6L-Zg-RWI">
             <objects>
-                <viewController storyboardIdentifier="signUpSuccessfullVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbY-1t-fmg" customClass="SignUpSuccessfullViewController" customModule="DareSpot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpDone" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbY-1t-fmg" customClass="SignUpSuccessfullViewController" customModule="DareSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uQv-Rc-Sdv"/>
                         <viewControllerLayoutGuide type="bottom" id="cwh-kX-EaF"/>
@@ -743,6 +743,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.085462543799999999" green="0.7240730246" blue="0.46184058919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="2y1-Hw-OMU" kind="show" identifier="signUpComplete" id="co4-Hm-AIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8A3-fS-NeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -772,5 +775,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="on9-xm-9tf"/>
+        <segue reference="co4-Hm-AIh"/>
     </inferredMetricsTieBreakers>
 </document>
