@@ -51,8 +51,10 @@ class SignUpPasswordViewController: UIViewController {
                     print("You have successfully signed up")
                     self.addUserInformation(uid: (user?.uid)!)
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "signUpSuccessfullVC")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "signUpDone")
                     self.present(vc!, animated: true, completion: nil)
+                    
+                    
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -61,6 +63,8 @@ class SignUpPasswordViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
+                    
+                    
                 }
             }
         }
