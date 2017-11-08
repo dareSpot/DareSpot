@@ -11,6 +11,7 @@
 		3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */; };
 		3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */; };
 		3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */; };
+		3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */; };
 		3CF6B2FD1FAFBA000039430A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FA1FAFBA000039430A /* Contents.json */; };
 		3CF6B2FE1FAFBA000039430A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FB1FAFBA000039430A /* email.png */; };
 		3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FC1FAFBA000039430A /* email@2x.png */; };
@@ -59,6 +60,7 @@
 		3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSuccessfullViewController.swift; sourceTree = "<group>"; };
 		3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMethods.swift; sourceTree = "<group>"; };
 		3CF6B2FA1FAFBA000039430A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		3CF6B2FB1FAFBA000039430A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		3CF6B2FC1FAFBA000039430A /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 			name = SignIn;
 			sourceTree = "<group>";
 		};
+		3C838C101FB19D1900899F46 /* FirebaseMethods */ = {
+			isa = PBXGroup;
+			children = (
+				3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */,
+			);
+			name = FirebaseMethods;
+			sourceTree = "<group>";
+		};
 		3CF6B2F91FAFBA000039430A /* email.imageset */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				3C838C101FB19D1900899F46 /* FirebaseMethods */,
 				3C0511D71F6F852F0015FA01 /* SignIn */,
 				EE38AA941F6E8AB700DB5EDD /* SignUp */,
 				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
@@ -566,6 +577,7 @@
 				3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */,
 				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,
 				EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */,
+				3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */,
 				3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

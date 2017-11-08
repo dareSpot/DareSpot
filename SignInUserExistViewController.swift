@@ -15,9 +15,10 @@ class SignInUserExistViewController: UIViewController {
 
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var emailTextfield: UITextField!
-    
+    var alert = UIAlertController()
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
     }
 
@@ -33,18 +34,19 @@ class SignInUserExistViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text , let password = passwordTextfield.text {
-            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            
+            Service.sharedInstance.singInUser(email: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("no error")
                     self.isLoginSuccessful = true
-                self.goToShowProfileViewController()
+                    self.goToShowProfileViewController()
+
                 }
                 else {
                     print("error")
-                    print(error?.localizedDescription ?? 1)
                     
                     
-                    let alert = UIAlertController(title: "Account Exist!!!!",
+                    self.alert = UIAlertController(title: "Account Exist!!!!",
                                                   message: error?.localizedDescription,
                                                   preferredStyle: UIAlertControllerStyle.alert)
                     
@@ -56,48 +58,62 @@ class SignInUserExistViewController: UIViewController {
                         self.goToChangePasswordViewController()
                     }
                     
-                    alert.addAction(login)
-                    alert.addAction(changePassword)
-                    self.present(alert, animated: true, completion: nil)
-
+                    self.alert.addAction(login)
+                    self.alert.addAction(changePassword)
+                    self.present(self.alert, animated: true, completion: nil)
                     
+ 
                 }
             })
- 
+
         }
 
     }
     
     func goToChangePasswordViewController () {
-        
         if let email = self.emailTextfield.text {
-            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-                
-                if error != nil {
-                    print("Can't change the password")
+            Service.sharedInstance.resetPassword(email: email, completion: { (error) in
+                if error == nil {
+                    print("An email has been sent you to change the password")
+                    self.alert = UIAlertController(title: "Please check your email!",
+                                                   message: "A link to change the password has been sent tpo your email address.",
+                                                   preferredStyle: UIAlertControllerStyle.alert)
+                    let login = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) {
+                        (result : UIAlertAction) -> Void in
+                        
+                        self.emailTextfield.text = ""
+                        self.passwordTextfield.text = ""
+                    }
+                    self.alert.addAction(login)
+                    self.present(self.alert, animated: true, completion: nil)
+                    
                 }
                 else {
+                    self.alert = UIAlertController(title: "Error",
+                                                   message: error?.localizedDescription,
+                                                   preferredStyle: UIAlertControllerStyle.alert)
                     
-                    print("An email has been sent you to change the password")
-                    let alertForSuccessfulChangedPassword = UIAlertController(title: "Please check your email!",
-                                                                              message: "A link to change the password has been sent tpo your email address.",
-                                                                              preferredStyle: UIAlertControllerStyle.alert)
-                    
-                    let login = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) {
+                    let errorAlert = UIAlertAction(title: "Error", style: UIAlertActionStyle.destructive) {
                         (result : UIAlertAction) -> Void in
                         
                         
                     }
-                    alertForSuccessfulChangedPassword.addAction(login)
-                    self.present(alertForSuccessfulChangedPassword, animated: true, completion: nil)
+                    self.alert.addAction(errorAlert)
+                    self.present(self.alert, animated: true, completion: nil)
+                    
                     
                 }
                 
-            }
+            })
+            
+ 
+            
     }
     }
 
     @IBAction func forgotPasswordPressed(_ sender: UIButton) {
+        
+        
     }
     
     // MARK: - Navigation

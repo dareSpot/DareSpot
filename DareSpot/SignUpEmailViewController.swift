@@ -17,7 +17,8 @@ class SignUpEmailViewController: UIViewController
     @IBOutlet weak var emailErrorMessageLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
-    
+    var alert = UIAlertController()
+
     
     
     override func viewDidLoad() {
@@ -48,39 +49,44 @@ class SignUpEmailViewController: UIViewController
         }
     }
     
-    
     func goTochangePasswordViewController() {
         
-//        performSegue(withIdentifier: "changePassword", sender: nil)
         if let email = self.emailTextField.text {
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            
-            if error != nil {
-                print("Can't change the password")
-            }
-            else {
-                
-            print("An email has been sent you to change the password")
-                
-                
-                
-                
-                let alertForSuccessfulChangedPassword = UIAlertController(title: "Please check your email!",
-                                                                          message: "A link to change the password has been sent tpo your email address.",
-                                                                          preferredStyle: UIAlertControllerStyle.alert)
-                
-                let login = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) {
-                    (result : UIAlertAction) -> Void in
+
+            Service.sharedInstance.resetPassword(email: email, completion: { (error) in
+                if error == nil {
+                    print("An email has been sent you to change the password")
+                     self.alert = UIAlertController(title: "Please check your email!",
+                                                                              message: "A link to change the password has been sent tpo your email address.",
+                                                                              preferredStyle: UIAlertControllerStyle.alert)
+                    let login = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) {
+                        (result : UIAlertAction) -> Void in
+                        
+                        self.performSegue(withIdentifier: "userExistSegue", sender: nil)
+                        
+                    }
+                    self.alert.addAction(login)
+                    self.present(self.alert, animated: true, completion: nil)
                     
-                    self.performSegue(withIdentifier: "userExistSegue", sender: nil)
-
                 }
-                alertForSuccessfulChangedPassword.addAction(login)
-                self.present(alertForSuccessfulChangedPassword, animated: true, completion: nil)
+                else {
+                    self.alert = UIAlertController(title: "Error",
+                                                                          message: error?.localizedDescription,
+                                                                          preferredStyle: UIAlertControllerStyle.alert)
 
-            }
-            
-        }
+                    let errorAlert = UIAlertAction(title: "Error", style: UIAlertActionStyle.destructive) {
+                        (result : UIAlertAction) -> Void in
+                        
+                        
+                    }
+                    self.alert.addAction(errorAlert)
+                    self.present(self.alert, animated: true, completion: nil)
+
+                    
+                }
+ 
+                })
+
         }
 
     }
@@ -123,53 +129,42 @@ class SignUpEmailViewController: UIViewController
     
     func checkAccount(email: String) {
         
-        Auth.auth().fetchProviders(forEmail: email, completion: { (stringArray, error) in
-            if error != nil {
-                print(error!)
+        Service.sharedInstance.fetchEmails(email: email) { (error, array) in
+            if error == nil && array != nil {
+                print("There is an active account")
+                 self.alert = UIAlertController(title: "Account Exist!!!!",
+                                              message: "There is already a account existing with this email address. Do you want to Login or Change Password ?",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                let login = UIAlertAction(title: "Login", style: UIAlertActionStyle.destructive) {
+                    (result : UIAlertAction) -> Void in
+                    self.goToUserExistViewController()
+                }
+                
+                let changePassword = UIAlertAction(title: "Change Password ?", style: UIAlertActionStyle.default) {
+                    (result : UIAlertAction) -> Void in
+                    print("Change PAssword yet to be implemented.")
+                    self.goTochangePasswordViewController()
+                    
+                }
+                
+                self.alert.addAction(login)
+                self.alert.addAction(changePassword)
+                self.present(self.alert, animated: true, completion: nil)
             }
             else {
-                if stringArray == nil {
-                    print("No password. No active account")
-                    self.goToSignUpNameViewController()
-
-                }
-                else {
-                    // login and change password
-                    
-                    print("There is an active account")
-                    
-                    let alert = UIAlertController(title: "Account Exist!!!!",
-                                                  message: "There is already a account existing with this email address. Do you want to Login or Change Password ?",
-                                                  preferredStyle: UIAlertControllerStyle.alert)
-                    
-                    let login = UIAlertAction(title: "Login", style: UIAlertActionStyle.destructive) {
-                        (result : UIAlertAction) -> Void in
-                        self.goToUserExistViewController()
-                        
-                    }
-                    
-                    
-                    let changePassword = UIAlertAction(title: "Change Password ?", style: UIAlertActionStyle.default) {
-                        (result : UIAlertAction) -> Void in
-                        print("Change PAssword yet to be implemented.")
-                        self.goTochangePasswordViewController()
-                        
-                    }
-                    
-                    alert.addAction(login)
-                    alert.addAction(changePassword)
-                    self.present(alert, animated: true, completion: nil)
-                    
-                    
-                    
-                }
+                print("No account, go to signUPnameViewController")
+                self.goToSignUpNameViewController()
             }
-        })
+            
+        }
+        
+        
     }
+        
    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        
-         if let email = self.emailTextField.text {
+
+        if let email = self.emailTextField.text {
             self.checkAccount(email: email)
         }
         else {
