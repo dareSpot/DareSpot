@@ -22,6 +22,11 @@ class SignInUserExistViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(true)
+        self.emailTextfield.text = ""
+        self.passwordTextfield.text = ""
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -46,7 +51,7 @@ class SignInUserExistViewController: UIViewController {
                     print("error")
                     
                     
-                    self.alert = UIAlertController(title: "Account Exist!!!!",
+                    self.alert = UIAlertController(title: "Error",
                                                   message: error?.localizedDescription,
                                                   preferredStyle: UIAlertControllerStyle.alert)
                     
@@ -120,27 +125,18 @@ class SignInUserExistViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if self.isLoginSuccessful {
-//            let passwordViewController:ChangePasswordViewController = ChangePasswordViewController()
-//            
-//            
-//        }
-//        else {
-//            
-//            if segue.identifier == "changePassword" {
-//                if let destination =  segue.destination as? ChangePasswordViewController {
-//                    if emailTextField != nil {
-//                        destination.email = self.emailTextfield.text!
-//                    }
-//                }
-//            }
-//            
-//        }
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showProfile" {
+            let dvc = segue.destination as! SearchFriendViewController
+            dvc.loggedInEmailAddress = self.emailTextfield.text!
+
+        }
+
+
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
     
 
 }

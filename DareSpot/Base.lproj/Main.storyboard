@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHR-eK-hpc">
-                                <rect key="frame" x="0.0" y="580.66666666666663" width="414" height="73.666666666666742"/>
+                                <rect key="frame" x="0.0" y="580.33333333333337" width="414" height="74"/>
                                 <color key="backgroundColor" red="0.085462543799999999" green="0.7240730246" blue="0.46184058919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Sign In">
@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="3239" y="1229"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Friend View Controller-->
         <scene sceneID="AeG-rs-P6B">
             <objects>
-                <viewController id="fQA-aE-mNR" sceneMemberID="viewController">
+                <viewController id="fQA-aE-mNR" customClass="SearchFriendViewController" customModule="DareSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tSH-fM-u1E"/>
                         <viewControllerLayoutGuide type="bottom" id="HSX-dc-bC6"/>
@@ -318,12 +318,84 @@
                     <view key="view" contentMode="scaleToFill" id="hNT-Im-Uje">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYK-4A-XVf">
+                                <rect key="frame" x="20" y="64" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Ym-L9-Agy"/>
+                                    <constraint firstAttribute="width" constant="374" id="HlJ-Sc-9u2"/>
+                                </constraints>
+                                <state key="normal" title="Add Friend"/>
+                                <connections>
+                                    <action selector="dareSpotButtonPressed:" destination="fQA-aE-mNR" eventType="touchUpInside" id="L6A-n2-yiB"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQs-NW-zBb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="QTz-Gp-xeF">
+                                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="Z2u-TG-cro">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="fQA-aE-mNR" id="29G-AO-dDX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-T5-KDQ">
+                                <rect key="frame" x="0.0" y="158" width="414" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="578" id="U7K-6E-Duf"/>
+                                    <constraint firstAttribute="width" constant="414" id="y5n-U0-ibB"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0Xe-ci-ZgZ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Xe-ci-ZgZ" id="u7t-nR-Eg2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9q4-fH-r5i">
+                                <rect key="frame" x="20" y="120" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="4WY-7u-OfO"/>
+                                    <constraint firstAttribute="height" constant="30" id="Qt3-7j-VSq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yYK-4A-XVf" firstAttribute="top" secondItem="tSH-fM-u1E" secondAttribute="bottom" constant="44" id="1K8-4c-rcq"/>
+                            <constraint firstItem="Z1C-T5-KDQ" firstAttribute="centerX" secondItem="9q4-fH-r5i" secondAttribute="centerX" id="6RI-ao-Wsr"/>
+                            <constraint firstItem="Z1C-T5-KDQ" firstAttribute="top" secondItem="9q4-fH-r5i" secondAttribute="bottom" constant="8" id="BqL-Kt-LNA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yYK-4A-XVf" secondAttribute="trailing" id="F25-yM-2UF"/>
+                            <constraint firstItem="zQs-NW-zBb" firstAttribute="top" secondItem="hNT-Im-Uje" secondAttribute="top" id="WWM-79-KFA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yYK-4A-XVf" secondAttribute="trailing" id="X69-8e-rsQ"/>
+                            <constraint firstItem="Z1C-T5-KDQ" firstAttribute="leading" secondItem="zQs-NW-zBb" secondAttribute="leading" id="XKL-Fp-4bA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9q4-fH-r5i" secondAttribute="trailing" id="hPs-dT-F9O"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yYK-4A-XVf" secondAttribute="leading" id="nrf-AV-uXp"/>
+                            <constraint firstItem="Z1C-T5-KDQ" firstAttribute="trailing" secondItem="zQs-NW-zBb" secondAttribute="trailing" id="pAn-c2-dQg"/>
+                            <constraint firstItem="9q4-fH-r5i" firstAttribute="top" secondItem="yYK-4A-XVf" secondAttribute="bottom" constant="26" id="r1k-DB-rqh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9q4-fH-r5i" secondAttribute="leading" id="xh1-Cc-4tT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dareSpotFriend" destination="yYK-4A-XVf" id="MMr-jB-wia"/>
+                        <outlet property="emailFriendTextField" destination="9q4-fH-r5i" id="dbH-Te-dAl"/>
+                        <outlet property="myTableView" destination="Z1C-T5-KDQ" id="QEU-C5-D0A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmD-Fh-xLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="1822"/>
+            <point key="canvasLocation" x="2430.434782608696" y="1821.1956521739132"/>
         </scene>
         <!--Sign Up Email View Controller-->
         <scene sceneID="TNH-Yj-lNy">

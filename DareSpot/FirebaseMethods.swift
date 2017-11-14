@@ -65,7 +65,7 @@ struct Service {
     func singInUser(email:String?, password:String?, completion: @escaping (_ user:String?,_ error:Error?) -> ()) {
         Auth.auth().signIn(withEmail: email!, password: password!) { (user1, error1) in
             if error1 == nil {
-                completion(nil, nil)
+                completion(user1?.email, nil)
             }
             else {
                 completion(nil,error1)
