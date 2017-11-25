@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		3C0511D61F6F84F50015FA01 /* SignInUserExistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D51F6F84F50015FA01 /* SignInUserExistViewController.swift */; };
 		3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */; };
+		3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */; };
 		3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */; };
 		3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */; };
 		3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */; };
 		3C838C151FB3CDCE00899F46 /* SearchFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */; };
+		3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */; };
 		3CF6B2FD1FAFBA000039430A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FA1FAFBA000039430A /* Contents.json */; };
 		3CF6B2FE1FAFBA000039430A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FB1FAFBA000039430A /* email.png */; };
 		3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FC1FAFBA000039430A /* email@2x.png */; };
@@ -59,10 +61,13 @@
 		25BBAFB043FEE7978A63E089 /* Pods-DareSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DareSpotUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DareSpotUITests/Pods-DareSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0511D51F6F84F50015FA01 /* SignInUserExistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInUserExistViewController.swift; path = ../SignInUserExistViewController.swift; sourceTree = "<group>"; };
 		3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSuccessfullViewController.swift; sourceTree = "<group>"; };
+		3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendMessageViewController.swift; path = ../SendMessageViewController.swift; sourceTree = "<group>"; };
+		3C2021981FC4C942001F10D9 /* DareSpot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DareSpot.entitlements; sourceTree = "<group>"; };
 		3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ../ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMethods.swift; sourceTree = "<group>"; };
 		3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendViewController.swift; sourceTree = "<group>"; };
+		3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeViewController.swift; path = ../ChallengeViewController.swift; sourceTree = "<group>"; };
 		3CF6B2FA1FAFBA000039430A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		3CF6B2FB1FAFBA000039430A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		3CF6B2FC1FAFBA000039430A /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
@@ -143,6 +148,46 @@
 			name = SignIn;
 			sourceTree = "<group>";
 		};
+		3C2021931FC04EAC001F10D9 /* SendMessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */,
+			);
+			name = SendMessageViewController;
+			sourceTree = "<group>";
+		};
+		3C2021941FC0549D001F10D9 /* ChangePasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */,
+			);
+			name = ChangePasswordViewController;
+			sourceTree = "<group>";
+		};
+		3C2021951FC054AB001F10D9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3C2021961FC054B0001F10D9 /* MainStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				EEC199231F6E744A00F981E6 /* Main.storyboard */,
+			);
+			name = MainStoryboard;
+			sourceTree = "<group>";
+		};
+		3C2021971FC054BE001F10D9 /* UserInformation */ = {
+			isa = PBXGroup;
+			children = (
+				EE38AAA51F6F2C5400DB5EDD /* UserInformation.swift */,
+			);
+			name = UserInformation;
+			sourceTree = "<group>";
+		};
 		3C838C101FB19D1900899F46 /* FirebaseMethods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +202,14 @@
 				3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */,
 			);
 			name = SearchFriend;
+			sourceTree = "<group>";
+		};
+		3C838C381FBCFFCA00899F46 /* ChallengeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */,
+			);
+			name = ChallengeViewController;
 			sourceTree = "<group>";
 		};
 		3CF6B2F91FAFBA000039430A /* email.imageset */ = {
@@ -199,7 +252,6 @@
 		EEC199131F6E744A00F981E6 = {
 			isa = PBXGroup;
 			children = (
-				3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */,
 				EEC1991E1F6E744A00F981E6 /* DareSpot */,
 				EEC199361F6E744B00F981E6 /* DareSpotTests */,
 				EEC199411F6E744B00F981E6 /* DareSpotUITests */,
@@ -222,12 +274,17 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				3C2021981FC4C942001F10D9 /* DareSpot.entitlements */,
+				3C2021971FC054BE001F10D9 /* UserInformation */,
+				3C2021941FC0549D001F10D9 /* ChangePasswordViewController */,
+				3C2021931FC04EAC001F10D9 /* SendMessageViewController */,
+				3C838C381FBCFFCA00899F46 /* ChallengeViewController */,
 				3C838C131FB3CD9E00899F46 /* SearchFriend */,
 				3C838C101FB19D1900899F46 /* FirebaseMethods */,
 				3C0511D71F6F852F0015FA01 /* SignIn */,
 				EE38AA941F6E8AB700DB5EDD /* SignUp */,
-				EEC1991F1F6E744A00F981E6 /* AppDelegate.swift */,
-				EEC199231F6E744A00F981E6 /* Main.storyboard */,
+				3C2021951FC054AB001F10D9 /* AppDelegate */,
+				3C2021961FC054B0001F10D9 /* MainStoryboard */,
 				EEC199291F6E744A00F981E6 /* Assets.xcassets */,
 				3CF6B2F91FAFBA000039430A /* email.imageset */,
 				EEC1992B1F6E744A00F981E6 /* LaunchScreen.storyboard */,
@@ -236,7 +293,6 @@
 				EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */,
 				EEC199521F6E77E600F981E6 /* Images */,
 				EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */,
-				EE38AAA51F6F2C5400DB5EDD /* UserInformation.swift */,
 			);
 			path = DareSpot;
 			sourceTree = "<group>";
@@ -344,8 +400,13 @@
 				TargetAttributes = {
 					EEC1991B1F6E744A00F981E6 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = A2B5VHU2WV;
+						DevelopmentTeam = 276TT98E76;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					EEC199321F6E744B00F981E6 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -553,6 +614,7 @@
 				"${BUILT_PRODUCTS_DIR}/DialogBox/DialogBox.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -561,6 +623,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DialogBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -576,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */,
 				EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */,
 				EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */,
 				EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */,
@@ -586,6 +650,7 @@
 				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
+				3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */,
 				3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */,
 				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,
 				EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */,
@@ -745,10 +810,11 @@
 			baseConfigurationReference = 9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2B5VHU2WV;
+				CODE_SIGN_ENTITLEMENTS = DareSpot/DareSpot.entitlements;
+				DEVELOPMENT_TEAM = 276TT98E76;
 				INFOPLIST_FILE = DareSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sushant.darespot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -759,10 +825,11 @@
 			baseConfigurationReference = D85564A78502E5BE9B3C08FF /* Pods-DareSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2B5VHU2WV;
+				CODE_SIGN_ENTITLEMENTS = DareSpot/DareSpot.entitlements;
+				DEVELOPMENT_TEAM = 276TT98E76;
 				INFOPLIST_FILE = DareSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bullet.DareSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sushant.darespot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

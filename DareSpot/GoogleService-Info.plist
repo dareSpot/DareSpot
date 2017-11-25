@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>884180350079-g5uvcmhpj0j09013hmvivc7fj3d9anpo.apps.googleusercontent.com</string>
+	<string>1054874716928-gt895g42oarcof6jljf3pubqcb66gceq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.884180350079-g5uvcmhpj0j09013hmvivc7fj3d9anpo</string>
+	<string>com.googleusercontent.apps.1054874716928-gt895g42oarcof6jljf3pubqcb66gceq</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAVABooZoSyXdqUAR2urf9YMk-fgRa5zdg</string>
+	<string>AIzaSyCe5r4uIKkme4bA0qDEhRlS9AdzBm0IPs0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>884180350079</string>
+	<string>1054874716928</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bullet.DareSpot</string>
+	<string>com.sushant.darespot</string>
 	<key>PROJECT_ID</key>
-	<string>darespot-9dd55</string>
+	<string>darespot-1117f</string>
 	<key>STORAGE_BUCKET</key>
-	<string>darespot-9dd55.appspot.com</string>
+	<string>darespot-1117f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:884180350079:ios:b268e25ce1ca437a</string>
+	<string>1:1054874716928:ios:34f1d1844fa73dec</string>
 	<key>DATABASE_URL</key>
-	<string>https://darespot-9dd55.firebaseio.com</string>
+	<string>https://darespot-1117f.firebaseio.com</string>
 </dict>
 </plist>

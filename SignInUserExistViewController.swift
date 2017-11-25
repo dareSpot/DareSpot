@@ -17,6 +17,8 @@ class SignInUserExistViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     var alert = UIAlertController()
     override func viewDidLoad() {
+        print("SignInUserViewController")
+
         super.viewDidLoad()
     
         
@@ -129,7 +131,7 @@ class SignInUserExistViewController: UIViewController {
         
         if segue.identifier == "showProfile" {
             let dvc = segue.destination as! SearchFriendViewController
-            dvc.loggedInEmailAddress = self.emailTextfield.text!
+            SearchFriendViewController.loggedInEmailAddress = self.emailTextfield.text!
 
         }
 
