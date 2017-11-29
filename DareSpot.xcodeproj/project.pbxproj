@@ -12,6 +12,12 @@
 		3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */; };
 		3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */; };
 		3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */; };
+		3C6A50911FCCB50000D6BC08 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50901FCCB50000D6BC08 /* Messages.swift */; };
+		3C6A50921FCCB50000D6BC08 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50901FCCB50000D6BC08 /* Messages.swift */; };
+		3C6A50931FCCB50000D6BC08 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50901FCCB50000D6BC08 /* Messages.swift */; };
+		3C6A50951FCE8FE000D6BC08 /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50941FCE8FE000D6BC08 /* Helper Files.swift */; };
+		3C6A50971FCE907900D6BC08 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50961FCE907900D6BC08 /* Message.swift */; };
+		3C6A50991FCE961900D6BC08 /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50981FCE961900D6BC08 /* VCCells.swift */; };
 		3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */; };
 		3C838C151FB3CDCE00899F46 /* SearchFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */; };
 		3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */; };
@@ -65,6 +71,10 @@
 		3C2021981FC4C942001F10D9 /* DareSpot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DareSpot.entitlements; sourceTree = "<group>"; };
 		3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ../ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3C6A50901FCCB50000D6BC08 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		3C6A50941FCE8FE000D6BC08 /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
+		3C6A50961FCE907900D6BC08 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3C6A50981FCE961900D6BC08 /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCells.swift; sourceTree = "<group>"; };
 		3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMethods.swift; sourceTree = "<group>"; };
 		3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendViewController.swift; sourceTree = "<group>"; };
 		3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeViewController.swift; path = ../ChallengeViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +262,7 @@
 		EEC199131F6E744A00F981E6 = {
 			isa = PBXGroup;
 			children = (
+				3C6A50901FCCB50000D6BC08 /* Messages.swift */,
 				EEC1991E1F6E744A00F981E6 /* DareSpot */,
 				EEC199361F6E744B00F981E6 /* DareSpotTests */,
 				EEC199411F6E744B00F981E6 /* DareSpotUITests */,
@@ -274,6 +285,9 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				3C6A50941FCE8FE000D6BC08 /* Helper Files.swift */,
+				3C6A50961FCE907900D6BC08 /* Message.swift */,
+				3C6A50981FCE961900D6BC08 /* VCCells.swift */,
 				3C2021981FC4C942001F10D9 /* DareSpot.entitlements */,
 				3C2021971FC054BE001F10D9 /* UserInformation */,
 				3C2021941FC0549D001F10D9 /* ChangePasswordViewController */,
@@ -642,6 +656,7 @@
 				3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */,
 				EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */,
 				EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */,
+				3C6A50911FCCB50000D6BC08 /* Messages.swift in Sources */,
 				EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */,
 				3C0511D61F6F84F50015FA01 /* SignInUserExistViewController.swift in Sources */,
 				3C838C151FB3CDCE00899F46 /* SearchFriendViewController.swift in Sources */,
@@ -649,11 +664,14 @@
 				EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */,
 				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
+				3C6A50951FCE8FE000D6BC08 /* Helper Files.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
 				3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */,
+				3C6A50991FCE961900D6BC08 /* VCCells.swift in Sources */,
 				3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */,
 				EE38AA9E1F6E8D0D00DB5EDD /* SignUpUsernameViewController.swift in Sources */,
 				EE38AA961F6E8AF900DB5EDD /* SignUpEmailViewController.swift in Sources */,
+				3C6A50971FCE907900D6BC08 /* Message.swift in Sources */,
 				3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */,
 				3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */,
 			);
@@ -664,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC199381F6E744B00F981E6 /* DareSpotTests.swift in Sources */,
+				3C6A50921FCCB50000D6BC08 /* Messages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC199431F6E744B00F981E6 /* DareSpotUITests.swift in Sources */,
+				3C6A50931FCCB50000D6BC08 /* Messages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

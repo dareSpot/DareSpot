@@ -8,10 +8,21 @@
 
 import Foundation
 import FirebaseAuth
-
+import FirebaseDatabase
 struct Service {
     static let sharedInstance = Service()
-    
+    let USER_REF = Database.database().reference().child("userInformation")
+    let USER_MESSAGE = Database.database().reference().child("messages")
+
+
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+
+    }
     func resetPassword(email:String, completion: @escaping (_ error:Error?) -> ()) {
         Auth.auth().sendPasswordReset(withEmail: email) { (error1) in
             if error1 != nil {
@@ -72,6 +83,8 @@ struct Service {
             }
         }
     }
+    
+    
     
 }
 
