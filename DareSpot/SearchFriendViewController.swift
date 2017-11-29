@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+
 class SearchFriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myTableView: UITableView!
@@ -20,11 +21,14 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     static var receiverId:String = ""
     var friendListArray = [String:Any]()
     var userNames = [String]()
+    var userEmails = [String]()
     var loggedInFriendList = [Dictionary<String, Any>]()
 
+    var userNameForNavTitle = ""
     var USER_FRIENDS = Database.database().reference().child("friendList")
    static var  loggedInid = ""
-    
+    var personalMessages = Messages()
+var personalMessageArray = [String]()
     var userFriendsEmails = [String:Any]()
     override func viewDidLoad() {
         print("SearchViewController")
@@ -32,13 +36,26 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
         self.myTableView.reloadData()
         myTableView.delegate = self
         myTableView.dataSource = self
-        
-        
-        
         self.getData(SearchFriendViewController.loggedInEmailAddress)
-        
+   //    self.observeMessagesFromFriend()
 
         // Do any additional setup after loading the view.
+    }
+    func observeMessagesFromFriend () {
+        Service.sharedInstance.USER_MESSAGE.observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String:AnyObject] {
+                self.personalMessages.setValuesForKeys(dictionary)
+                print(self.personalMessages.fromID)
+                print(self.personalMessages.text)
+                print(self.personalMessages.toID)
+                print(self.personalMessages.timeStamp!)
+self.personalMessageArray.append(self.personalMessages.text!)
+                print(self.personalMessageArray)
+                
+            
+            }
+            
+        }, withCancel: nil)
     }
     var CURRENT_USER_ID: String {
         let id = Auth.auth().currentUser!.uid
@@ -47,12 +64,7 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         
-        do {
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
+        Service.sharedInstance.signOut()
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -62,10 +74,9 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getData(_ email:String) {
-        let USER_REF = Database.database().reference().child("userInformation")
 
         let loggedInUser = email
-        USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
+        Service.sharedInstance.USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
             print("loggedIn = \(loggedIn)")
             let loggedInUserInformation = loggedIn.value as? NSDictionary
             if let myArray = loggedInUserInformation?.objectEnumerator().allObjects as? [[String:Any]] {
@@ -87,10 +98,11 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
                         
                         for  friendEmail in allEmails {
                             let dataOfFriend: [String: AnyObject] = friendEmail.value as! [String : AnyObject]
-                            if let oneEmail = dataOfFriend["email"] as? String {
+                            if let oneEmail = dataOfFriend["userName"] as? String, let oneUsername = dataOfFriend["email"] as? String {
                                 SearchFriendViewController.receiverId = dataOfFriend["id"] as! String
                                 SearchFriendViewController.receiverEmailAddress = dataOfFriend["email"] as! String
                                 self.userNames.append(oneEmail)
+                                self.userEmails.append(oneUsername)
                                 self.myTableView.reloadData()
 
                                 
@@ -108,14 +120,12 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     }
     @IBAction func dareSpotButtonPressed(_ sender: UIButton) {
         
-        let USER_REF = Database.database().reference().child("userInformation")
         
         // logged user info
         
         var found = false
-        
         let loggedInUser = SearchFriendViewController.loggedInEmailAddress
-        USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
+        Service.sharedInstance.USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
             print("loggedIn = \(loggedIn)")
             let loggedInUserInformation = loggedIn.value as? NSDictionary
             if let myArray = loggedInUserInformation?.objectEnumerator().allObjects as? [[String:Any]] {
@@ -173,12 +183,11 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     
     func addToTable() {
         
-         let USER_REF = Database.database().reference().child("userInformation")
         
         // added user info
         
         let strSearch = self.emailFriendTextField.text
-        USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: strSearch).queryEnding(atValue: strSearch! + "\u{f8ff}").observeSingleEvent(of: .value, with: { (addedUser) in
+        Service.sharedInstance.USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: strSearch).queryEnding(atValue: strSearch! + "\u{f8ff}").observeSingleEvent(of: .value, with: { (addedUser) in
             print("addedUser = \(addedUser)")
             let addedUserInformation = addedUser.value as? NSDictionary
             if addedUser.childrenCount == 0 {
@@ -209,6 +218,7 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
                     
                     self.friendListArray = ["firstName":firstName!,"lastName":lastName!,"email":email!,"userName":userName!,"phoneNumber":phoneNumber!,"dateOfBirth":dateOfBirth!,"id":id!]
                     self.userNames.append(email!)
+                    self.userEmails.append(userName!)
                     self.myTableView.reloadData()
                     
                     let  fireBaseRefrence = Database.database().reference().child("userInformation").child(SearchFriendViewController.loggedInid).child("friendList")
@@ -222,9 +232,8 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     
     func sendMessage(email:String) {
         
-        let USER_REF = Database.database().reference().child("userInformation")
         let loggedInUser = SearchFriendViewController.loggedInEmailAddress
-        USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
+        Service.sharedInstance.USER_REF.queryOrdered(byChild:  "email").queryStarting(atValue: loggedInUser).queryEnding(atValue: loggedInUser + "\u{f8ff}").observeSingleEvent(of: .value, with: { (loggedIn) in
             print("loggedIn = \(loggedIn)")
             let loggedInUserInformation = loggedIn.value as? NSDictionary
             if let myArray = loggedInUserInformation?.objectEnumerator().allObjects as? [[String:Any]] {
@@ -277,8 +286,8 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
         
         let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
 
-        self.sendMessage(email: (currentCell.textLabel?.text!)!)
-        
+        self.sendMessage(email: (currentCell.detailTextLabel?.text)!)
+      self.userNameForNavTitle =   (currentCell.textLabel?.text)!
         print(currentCell.textLabel!.text!)
         performSegue(withIdentifier: "sendMessageVC", sender: nil)
 
@@ -288,8 +297,17 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.myTableView.dequeueReusableCell(withIdentifier: "cell")!
+        var cell:UITableViewCell = self.myTableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        
+
         cell.textLabel?.text = self.userNames[indexPath.row]
+        
+        cell.detailTextLabel?.text = self.userEmails[indexPath.row]
+        
+        var image : UIImage = UIImage(named: "dareSpotLogo")!
+        cell.imageView?.image = image
+
         return cell
 
     }
@@ -301,14 +319,22 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendMessageVC" {
+            let nextScene = segue.destination as? SendMessageViewController
+            
+            let selectedVehicle = self.userNameForNavTitle
+            nextScene?.navBarTitle = selectedVehicle
+
+
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
