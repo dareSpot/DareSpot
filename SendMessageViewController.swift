@@ -19,7 +19,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     var loggedInFriendList = [Dictionary<String, Any>]()
     var userFriendsEmails = [String:Any]()
     var navBarTitle = ""
-    
+    var singleUserId = ""
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var myNavigationBar: UINavigationBar!
     var challengesArray = [String]()
@@ -40,8 +40,6 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
         myTableView.delegate = self
         self.getData(SearchFriendViewController.loggedInEmailAddress)
         self.myNavigationBar.topItem?.title = navBarTitle
-        
-      //  self.observeMessagesFromFriend()
         
         self.customization()
         self.fetchData()
@@ -113,7 +111,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
             if self.canSendLocation {
                 let coordinate = String(lastLocation.coordinate.latitude) + ":" + String(lastLocation.coordinate.longitude)
                 let message = Message.init(type: .location, content: coordinate, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
-                Message.send(message: message, toID: SearchFriendViewController.receiverId, completion: {(_) in
+                Message.send(message: message, toID: self.singleUserId, completion: {(_) in
                 })
                 self.canSendLocation = false
             }
@@ -121,7 +119,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     }
     func fetchData() {
         let currentUser = Auth.auth().currentUser?.uid
-        Message.downloadAllMessages(forUserID: SearchFriendViewController.receiverId, completion: {[weak weakSelf = self] (message) in
+        Message.downloadAllMessages(forUserID: self.singleUserId, completion: {[weak weakSelf = self] (message) in
             weakSelf?.items.append(message)
             weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
@@ -131,7 +129,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
                 }
             }
         })
-        Message.markMessagesRead(forUserID: currentUser!)
+        Message.markMessagesRead(forUserID: self.singleUserId)
     }
     
     
@@ -159,15 +157,6 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     }
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         
-//        let referenceForMessages = Database.database().reference().child("messages")
-//        let childMessages = referenceForMessages.childByAutoId()
-//        let timeStamp = NSDate().timeIntervalSince1970
-//        let values = ["text":self.messagesTextField.text!,"toID":SearchFriendViewController.receiverId,"fromID":SearchFriendViewController.loggedInid,"timeStamp":timeStamp] as [String : Any]
-//        childMessages.updateChildValues(values)
-//        
-//        self.myTableView.reloadData()
-        
-        
         if let text = self.messagesTextField.text {
             if text.characters.count > 0 {
                 self.composeMessage(type: .text, content: self.messagesTextField.text!)
@@ -178,7 +167,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     
     func composeMessage(type: MessageType, content: Any)  {
         let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
-        Message.send(message: message, toID: SearchFriendViewController.receiverId, completion: {(_) in
+        Message.send(message: message, toID: self.singleUserId, completion: {(_) in
         })
     }
 
@@ -216,7 +205,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
                             let dataOfFriend: [String: AnyObject] = friendEmail.value as! [String : AnyObject]
                             if let toEmail = dataOfFriend["email"] as? String {
 
-                                print("loggedinEmail = \(SearchFriendViewController.loggedInEmailAddress) \n receiverEmail = \(SearchFriendViewController.receiverEmailAddress) \n loggedInId = \(SearchFriendViewController.loggedInid) \n receiverId = \(SearchFriendViewController.receiverId)")
+                                print("loggedinEmail = \(SearchFriendViewController.loggedInEmailAddress) \n receiverEmail = \(SearchFriendViewController.receiverEmailAddress) \n loggedInId = \(SearchFriendViewController.loggedInid) \n self.singleUserId = \(self.singleUserId)")
                                 
                                 
                             }
