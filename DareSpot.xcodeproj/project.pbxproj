@@ -21,6 +21,9 @@
 		3C838C121FB19D2A00899F46 /* FirebaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */; };
 		3C838C151FB3CDCE00899F46 /* SearchFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */; };
 		3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */; };
+		3C9B8CC41FCF3C7F00DA1897 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B8CC31FCF3C7F00DA1897 /* User.swift */; };
+		3C9B8CC61FCF3D7500DA1897 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B8CC51FCF3D7500DA1897 /* Conversation.swift */; };
+		3C9B8CC81FCF3E4800DA1897 /* newMessage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3C9B8CC71FCF3E4800DA1897 /* newMessage.wav */; };
 		3CF6B2FD1FAFBA000039430A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FA1FAFBA000039430A /* Contents.json */; };
 		3CF6B2FE1FAFBA000039430A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FB1FAFBA000039430A /* email.png */; };
 		3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF6B2FC1FAFBA000039430A /* email@2x.png */; };
@@ -78,6 +81,9 @@
 		3C838C111FB19D2A00899F46 /* FirebaseMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMethods.swift; sourceTree = "<group>"; };
 		3C838C141FB3CDCE00899F46 /* SearchFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendViewController.swift; sourceTree = "<group>"; };
 		3C838C341FBCFEA800899F46 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeViewController.swift; path = ../ChallengeViewController.swift; sourceTree = "<group>"; };
+		3C9B8CC31FCF3C7F00DA1897 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3C9B8CC51FCF3D7500DA1897 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		3C9B8CC71FCF3E4800DA1897 /* newMessage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newMessage.wav; sourceTree = "<group>"; };
 		3CF6B2FA1FAFBA000039430A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		3CF6B2FB1FAFBA000039430A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		3CF6B2FC1FAFBA000039430A /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
@@ -285,6 +291,9 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				3C9B8CC71FCF3E4800DA1897 /* newMessage.wav */,
+				3C9B8CC51FCF3D7500DA1897 /* Conversation.swift */,
+				3C9B8CC31FCF3C7F00DA1897 /* User.swift */,
 				3C6A50941FCE8FE000D6BC08 /* Helper Files.swift */,
 				3C6A50961FCE907900D6BC08 /* Message.swift */,
 				3C6A50981FCE961900D6BC08 /* VCCells.swift */,
@@ -462,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */,
+				3C9B8CC81FCF3E4800DA1897 /* newMessage.wav in Resources */,
 				3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */,
 				EEC1992A1F6E744A00F981E6 /* Assets.xcassets in Resources */,
 				EEC199541F6E781400F981E6 /* dareSpotLogo.jpg in Resources */,
@@ -655,6 +665,7 @@
 			files = (
 				3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */,
 				EEC199201F6E744A00F981E6 /* AppDelegate.swift in Sources */,
+				3C9B8CC61FCF3D7500DA1897 /* Conversation.swift in Sources */,
 				EE38AAA01F6E8D2B00DB5EDD /* SignUpPasswordViewController.swift in Sources */,
 				3C6A50911FCCB50000D6BC08 /* Messages.swift in Sources */,
 				EE38AA981F6E8B2800DB5EDD /* SignUpNameViewController.swift in Sources */,
@@ -663,6 +674,7 @@
 				EE38AA9A1F6E8B7400DB5EDD /* SignUpGenderDOBViewController.swift in Sources */,
 				EEC199281F6E744A00F981E6 /* DareSpot.xcdatamodeld in Sources */,
 				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
+				3C9B8CC41FCF3C7F00DA1897 /* User.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
 				3C6A50951FCE8FE000D6BC08 /* Helper Files.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,

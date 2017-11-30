@@ -19,6 +19,7 @@ class ChallengeViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ChallengeViewController called")
         challengeTableView.dataSource = self
         challengeTableView.delegate = self
         
