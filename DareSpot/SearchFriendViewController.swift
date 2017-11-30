@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-import AudioToolbox
 
 class SearchFriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,115 +18,45 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
    static var loggedInEmailAddress: String = ""
     static var loggedInID:String = ""
     static var receiverEmailAddress:String = ""
+    static var receiverId:String = ""
     var friendListArray = [String:Any]()
     var userNames = [String]()
     var userEmails = [String]()
-    var userIds = [String]()
-
     var loggedInFriendList = [Dictionary<String, Any>]()
 
-    @IBOutlet weak var myNavBar: UINavigationBar!
     var userNameForNavTitle = ""
     var USER_FRIENDS = Database.database().reference().child("friendList")
    static var  loggedInid = ""
     var personalMessages = Messages()
 var personalMessageArray = [String]()
     var userFriendsEmails = [String:Any]()
-    lazy var leftButton: UIBarButtonItem = {
-        let image = UIImage.init(named: "default profile")?.withRenderingMode(.alwaysOriginal)
-        let button  = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(SearchFriendViewController.showProfile))
-        return button
-    }()
-    var items = [Conversation]()
-
-    
     override func viewDidLoad() {
-        print("SearchViewController called")
+        print("SearchViewController")
         super.viewDidLoad()
         self.myTableView.reloadData()
         myTableView.delegate = self
         myTableView.dataSource = self
         self.getData(SearchFriendViewController.loggedInEmailAddress)
-        
-        
-        
-//        self.customization()
-//        self.fetchData()
+   //    self.observeMessagesFromFriend()
 
+        // Do any additional setup after loading the view.
     }
-    
-    @objc func showProfile() {
-        let info = ["viewType" : ShowExtraView.profile]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-        self.inputView?.isHidden = true
-    }
-
-    
-    func fetchData() {
-        Conversation.showConversations { (conversations) in
-            self.items = conversations
-            self.items.sort{ $0.lastMessage.timestamp > $1.lastMessage.timestamp }
-            DispatchQueue.main.async {
-                self.myTableView.reloadData()
-                for conversation in self.items {
-                    if conversation.lastMessage.isRead == false {
-                        self.playSound()
-                        break
-                    }
-                }
+    func observeMessagesFromFriend () {
+        Service.sharedInstance.USER_MESSAGE.observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String:AnyObject] {
+                self.personalMessages.setValuesForKeys(dictionary)
+                print(self.personalMessages.fromID)
+                print(self.personalMessages.text)
+                print(self.personalMessages.toID)
+                print(self.personalMessages.timeStamp!)
+self.personalMessageArray.append(self.personalMessages.text!)
+                print(self.personalMessageArray)
+                
+            
             }
-        }
+            
+        }, withCancel: nil)
     }
-    
-    func customization()  {
-        if let id = Auth.auth().currentUser?.uid {
-            User.info(forUserID: id, completion: { [weak weakSelf = self] (user) in
-                let image = user.profilePic
-                let contentSize = CGSize.init(width: 30, height: 30)
-                UIGraphicsBeginImageContextWithOptions(contentSize, false, 0.0)
-                let _  = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14).addClip()
-                image.draw(in: CGRect(origin: CGPoint.zero, size: contentSize))
-                let path = UIBezierPath.init(roundedRect: CGRect.init(origin: CGPoint.zero, size: contentSize), cornerRadius: 14)
-                path.lineWidth = 2
-                UIColor.white.setStroke()
-                path.stroke()
-                let finalImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(.alwaysOriginal)
-                UIGraphicsEndImageContext()
-                DispatchQueue.main.async {
-                    weakSelf?.leftButton.image = finalImage
-                    weakSelf = nil
-                }
-            })
-        }
-    }
-    
-    @objc func showContacts() {
-        let info = ["viewType" : ShowExtraView.contacts]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-    }
-    
-    //Show EmailVerification on the bottom
-//    @objc func showEmailAlert() {
-//        User.checkUserVerification {[weak weakSelf = self] (status) in
-//            status == true ? (weakSelf?.alertBottomConstraint.constant = -40) : (weakSelf?.alertBottomConstraint.constant = 0)
-//            UIView.animate(withDuration: 0.3) {
-//                weakSelf?.view.layoutIfNeeded()
-//                weakSelf = nil
-//            }
-//        }
-//    }
-//    
-    func playSound()  {
-        var soundURL: NSURL?
-        var soundID:SystemSoundID = 0
-        let filePath = Bundle.main.path(forResource: "newMessage", ofType: "wav")
-        soundURL = NSURL(fileURLWithPath: filePath!)
-        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-        AudioServicesPlayAlertSound(soundID)
-    }
-
-    
-   
     var CURRENT_USER_ID: String {
         let id = Auth.auth().currentUser!.uid
         return id
@@ -169,11 +98,11 @@ var personalMessageArray = [String]()
                         
                         for  friendEmail in allEmails {
                             let dataOfFriend: [String: AnyObject] = friendEmail.value as! [String : AnyObject]
-                            if let oneEmail = dataOfFriend["userName"] as? String, let oneUsername = dataOfFriend["email"] as? String, let oneId = dataOfFriend["id"] as? String{
+                            if let oneEmail = dataOfFriend["userName"] as? String, let oneUsername = dataOfFriend["email"] as? String {
+                                SearchFriendViewController.receiverId = dataOfFriend["id"] as! String
                                 SearchFriendViewController.receiverEmailAddress = dataOfFriend["email"] as! String
                                 self.userNames.append(oneEmail)
                                 self.userEmails.append(oneUsername)
-                                self.userIds.append(oneId)
                                 self.myTableView.reloadData()
 
                                 
@@ -330,6 +259,11 @@ var personalMessageArray = [String]()
                                 if  email == oneEmail {
                                     let toId = dataOfFriend["id"] as? String
                                     print("toId = \(String(describing: toId)) SearchFriendViewController.loggedInid = \(String(describing: SearchFriendViewController.loggedInid))")
+                                    SearchFriendViewController.receiverId = toId!
+                                    
+                                    
+                                    
+                                    
                                 }
                                 
                             }
@@ -353,10 +287,9 @@ var personalMessageArray = [String]()
         let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
 
         self.sendMessage(email: (currentCell.detailTextLabel?.text)!)
-         self.userNameForNavTitle =   (currentCell.textLabel?.text)!
+      self.userNameForNavTitle =   (currentCell.textLabel?.text)!
         print(currentCell.textLabel!.text!)
-        performSegue(withIdentifier: "sendMessageVC", sender: self.userIds[indexPath.row])
-        
+        performSegue(withIdentifier: "sendMessageVC", sender: nil)
 
         
         
@@ -371,7 +304,6 @@ var personalMessageArray = [String]()
         cell.textLabel?.text = self.userNames[indexPath.row]
         
         cell.detailTextLabel?.text = self.userEmails[indexPath.row]
-        
         
         var image : UIImage = UIImage(named: "dareSpotLogo")!
         cell.imageView?.image = image
@@ -397,9 +329,7 @@ var personalMessageArray = [String]()
             
             let selectedVehicle = self.userNameForNavTitle
             nextScene?.navBarTitle = selectedVehicle
-            nextScene?.singleUserId = sender as! String
-            
-//            nextScene.id = sender
+
 
         }
         // Get the new view controller using segue.destinationViewController.
