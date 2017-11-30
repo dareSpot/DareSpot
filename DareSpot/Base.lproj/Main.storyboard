@@ -340,7 +340,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-CU-ZBw">
-                                <rect key="frame" x="20" y="66" width="374" height="638"/>
+                                <rect key="frame" x="20" y="111" width="374" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="6zV-n6-D8T"/>
@@ -624,6 +624,7 @@
                     <connections>
                         <outlet property="dareSpotFriend" destination="yYK-4A-XVf" id="MMr-jB-wia"/>
                         <outlet property="emailFriendTextField" destination="9q4-fH-r5i" id="dbH-Te-dAl"/>
+                        <outlet property="myNavBar" destination="zQs-NW-zBb" id="xjN-Mf-Vta"/>
                         <outlet property="myTableView" destination="Z1C-T5-KDQ" id="QEU-C5-D0A"/>
                         <segue destination="MMF-es-9J1" kind="presentation" identifier="challengeVC" id="4ej-fb-dUt"/>
                         <segue destination="3Dz-Zh-0JK" kind="show" identifier="sendMessageVC" id="G9f-7P-lff"/>
