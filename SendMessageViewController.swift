@@ -10,9 +10,13 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 import CoreLocation
+import AVFoundation
+import Photos
+import PhotosUI
 
-class SendMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate {
+class SendMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var addMediaButton: UIButton!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var messagesTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
@@ -29,10 +33,77 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     let locationManager = CLLocationManager()
     var canSendLocation = true
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
+    let imagePicker = UIImagePickerController()
+
     override var canBecomeFirstResponder: Bool{
         return true
     }
+    
+    func openPhotoPickerWith(source: PhotoSource) {
+        switch source {
+        case .camera:
+//            let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaType.video)
+            let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+            if (status == .authorized || status == .notDetermined) {
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.allowsEditing = true
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            else {
+                print("the camera is not supported in simulator")
+            }
+        case .library:
+            let status = PHPhotoLibrary.authorizationStatus()
+            if (status == .authorized || status == .notDetermined) {
+                self.imagePicker.sourceType = .savedPhotosAlbum
+                self.imagePicker.allowsEditing = true
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        }
+    }
+
+    @IBAction func addMediaButtonClicked(_ sender: UIButton) {
+        
+        
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancel")
+        }
+        
+        let photoAndLibrary = UIAlertAction(title: "Photo & Library", style: .default)
+        { _ in
+            self.openPhotoPickerWith(source: .library)
+
+            print("Photo")
+        }
+        let camera = UIAlertAction(title: "Camera", style: .default)
+        { _ in
+            self.openPhotoPickerWith(source: .camera)
+
+        }
+        let location = UIAlertAction(title: "Location", style: .default)
+        { _ in
+            print("Location")
+        }
+        let document = UIAlertAction(title: "Document", style: .default)
+        { _ in
+            print("Document")
+        }
+        
+        
+        
+        actionSheetControllerIOS8.addAction(cancelActionButton)
+        actionSheetControllerIOS8.addAction(camera)
+        actionSheetControllerIOS8.addAction(photoAndLibrary)
+        actionSheetControllerIOS8.addAction(document)
+        actionSheetControllerIOS8.addAction(location)
+        self.present(actionSheetControllerIOS8, animated: true, completion: nil)
+
+        
+    }
+    
+    
     override func viewDidLoad() {
         print("sendMessageViewController")
         super.viewDidLoad()
@@ -48,7 +119,7 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
 
     }
     func customization() {
-//        self.imagePicker.delegate = self
+        self.imagePicker.delegate = self
         self.myTableView.estimatedRowHeight = self.barHeight
         self.myTableView.rowHeight = UITableViewAutomaticDimension
         self.myTableView.contentInset.bottom = self.barHeight
@@ -318,6 +389,16 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         Message.markMessagesRead(forUserID: currentUser!)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.composeMessage(type: .photo, content: pickedImage)
+        } else {
+            let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.composeMessage(type: .photo, content: pickedImage)
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
