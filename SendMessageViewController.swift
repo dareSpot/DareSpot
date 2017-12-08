@@ -13,9 +13,11 @@ import CoreLocation
 import AVFoundation
 import Photos
 import PhotosUI
+import AVKit
+class SendMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 
-class SendMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    let playButton = UIButton(type: .system)
+    var finalThumbnailImage: UIImage? = nil
     @IBOutlet weak var addMediaButton: UIButton!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var messagesTextField: UITextField!
@@ -34,16 +36,28 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     var canSendLocation = true
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     let imagePicker = UIImagePickerController()
-
+   
     override var canBecomeFirstResponder: Bool{
         return true
     }
-    
+    func animateExtraButtons(toHide: Bool)  {
+        switch toHide {
+        case true:
+            self.bottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.3) {
+                self.messagesTextField.layoutIfNeeded()
+            }
+        default:
+            self.bottomConstraint.constant = -50
+            UIView.animate(withDuration: 0.3) {
+                self.messagesTextField.layoutIfNeeded()
+            }
+        }
+    }
     func openPhotoPickerWith(source: PhotoSource) {
         switch source {
         case .camera:
-//            let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaType.video)
-            let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+            let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
             if (status == .authorized || status == .notDetermined) {
                 self.imagePicker.sourceType = .camera
                 self.imagePicker.allowsEditing = true
@@ -63,8 +77,8 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     @IBAction func addMediaButtonClicked(_ sender: UIButton) {
-        
-        
+                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for:.photoLibrary)!
+
         let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
@@ -107,17 +121,39 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         print("sendMessageViewController")
         super.viewDidLoad()
-        myTableView.dataSource = self
-        myTableView.delegate = self
+        self.myTableView.dataSource = self
+        self.myTableView.delegate = self
         self.getData(SearchFriendViewController.loggedInEmailAddress)
         self.myNavigationBar.topItem?.title = navBarTitle
+        self.messagesTextField.delegate = self
         
         self.customization()
         self.fetchData()
-
-
+        self.playButton.setTitle("Play", for: .normal)
+        self.playButton.addTarget(self, action: #selector(SendMessageViewController.playVideo(sender:)), for: UIControlEvents.touchUpInside)
+        self.playButton.translatesAutoresizingMaskIntoConstraints = false
+//        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for:.camera)!
+        
 
     }
+    
+    func playVideo(sender:UIButton) {
+        
+        print(self.items)
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: self.myTableView)
+        let indexPath = self.myTableView.indexPathForRow(at: buttonPosition)
+        print(indexPath)
+        
+        let videoURL = URL(string: self.items[(indexPath?.row)!].content as! String)
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+
+    }
+    
     func customization() {
         self.imagePicker.delegate = self
         self.myTableView.estimatedRowHeight = self.barHeight
@@ -140,31 +176,43 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
         }
         return state
     }
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -270, up: true)
+    }
+
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -270, up: false)
+    }
+
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    // Move the text field in a pretty animation!
+    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
     @IBAction func selectLocation(_ sender: Any) {
         self.canSendLocation = true
         self.animateExtraButtons(toHide: true)
         if self.checkLocationPermission() {
-            self.locationManager.startUpdatingLocation()
+//            self.locationManager.startUpdatingLocation()
         } else {
-            self.locationManager.requestWhenInUseAuthorization()
+//            self.locationManager.requestWhenInUseAuthorization()
         }
     }
     
-    func animateExtraButtons(toHide: Bool)  {
-        switch toHide {
-        case true:
-            self.bottomConstraint.constant = 0
-            UIView.animate(withDuration: 0.3) {
-//                self.inputBar.layoutIfNeeded()
-            }
-        default:
-            self.bottomConstraint.constant = -50
-            UIView.animate(withDuration: 0.3) {
-//                self.inputBar.layoutIfNeeded()
-            }
-        }
-    }
+    
     
     @objc func showKeyboard(notification: Notification) {
         if let frame = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue {
@@ -238,7 +286,15 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     
     func composeMessage(type: MessageType, content: Any)  {
         let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
-        Message.send(message: message, toID: self.singleUserId, completion: {(_) in
+        Message.send(message: message, toID: self.singleUserId, completion: {(_, thumbnailImage) in
+            if let finalImage = thumbnailImage {
+            self.finalThumbnailImage = finalImage
+            }
+            
+//            DispatchQueue.main.async {
+//                self.myTableView.reloadData()
+//            }
+            
         })
     }
 
@@ -294,7 +350,9 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.messagesTextField.resignFirstResponder()
         switch self.items[indexPath.row].type {
         case .photo:
@@ -303,12 +361,21 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
                 self.inputAccessoryView?.isHidden = true
             }
-        case .location: break
+         case .location: break
             let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
             let location = CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
             let info = ["viewType" : ShowExtraView.map, "location": location] as [String : Any]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
             self.inputAccessoryView?.isHidden = true
+        case .video:
+            break
+//            let videoURL = URL(string: self.items[indexPath.row].content as! String)
+//            let player = AVPlayer(url: videoURL!)
+//            let playerViewController = AVPlayerViewController()
+//            playerViewController.player = player
+//            self.present(playerViewController, animated: true) {
+//                playerViewController.player!.play()
+//            }
         default: break
         }
     }
@@ -338,6 +405,32 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
             case .location:
                 cell.messageBackground.image = UIImage.init(named: "location")
                 cell.message.isHidden = true
+            case .video:
+                cell.addSubview(self.playButton)
+                self.playButton.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: 0).isActive = true
+                self.playButton.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                self.playButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+                self.playButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+                if let image = self.finalThumbnailImage {
+                    cell.messageBackground.image = image
+                    cell.message.isHidden = true
+                } else {
+                    cell.messageBackground.image = UIImage.init(named: "loading")
+                    cell.addSubview(self.playButton)
+                    self.playButton.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: 0).isActive = true
+                    self.playButton.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                    self.playButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+                    self.playButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+                    self.items[indexPath.row].downloadImage(indexpathRow: indexPath.row, completion: { (state, index) in
+                        if state == true {
+//                            DispatchQueue.main.async {
+//                                self.myTableView.reloadData()
+//                            }
+                        }
+                    })
+                }
             }
             return cell
         case .sender:
@@ -364,6 +457,26 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
             case .location:
                 cell.messageBackground.image = UIImage.init(named: "location")
                 cell.message.isHidden = true
+            case .video:
+                cell.addSubview(self.playButton)
+                self.playButton.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: 0).isActive = true
+                self.playButton.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                self.playButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+                self.playButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+                if let image = self.finalThumbnailImage {
+                    cell.messageBackground.image = image
+                    cell.message.isHidden = true
+                } else {
+                    cell.messageBackground.image = UIImage.init(named: "loading")
+                    self.items[indexPath.row].downloadImage(indexpathRow: indexPath.row, completion: { (state, index) in
+                        if state == true {
+//                            DispatchQueue.main.async {
+//                                self.myTableView.reloadData()
+//                            }
+                        }
+                    })
+                }
             }
             return cell
         }
@@ -392,12 +505,13 @@ class SendMessageViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.composeMessage(type: .photo, content: pickedImage)
-        } else {
-            let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        if let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL {
+            print("videoURL = \(videoURL)")
+            self.composeMessage(type: .video, content: videoURL)
+        } else if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.composeMessage(type: .photo, content: pickedImage)
         }
+        
         picker.dismiss(animated: true, completion: nil)
     }
     /*

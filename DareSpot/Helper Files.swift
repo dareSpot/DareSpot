@@ -78,6 +78,7 @@ enum MessageType {
     case photo
     case text
     case location
+    case video
 }
 
 enum MessageOwner {

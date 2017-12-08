@@ -22,6 +22,8 @@ class SearchFriendViewController: UIViewController, UITableViewDelegate, UITable
     var friendListArray = [String:Any]()
     var userNames = [String]()
     var userEmails = [String]()
+    var userProfilePics = [String]()
+
     var userIds = [String]()
 
     var loggedInFriendList = [Dictionary<String, Any>]()
@@ -48,8 +50,7 @@ var personalMessageArray = [String]()
         myTableView.delegate = self
         myTableView.dataSource = self
         self.getData(SearchFriendViewController.loggedInEmailAddress)
-        
-        
+        self.myNavBar.topItem?.title = SearchFriendViewController.loggedInEmailAddress
         
 //        self.customization()
 //        self.fetchData()
@@ -169,11 +170,12 @@ var personalMessageArray = [String]()
                         
                         for  friendEmail in allEmails {
                             let dataOfFriend: [String: AnyObject] = friendEmail.value as! [String : AnyObject]
-                            if let oneEmail = dataOfFriend["userName"] as? String, let oneUsername = dataOfFriend["email"] as? String, let oneId = dataOfFriend["id"] as? String{
+                            if let oneEmail = dataOfFriend["userName"] as? String, let oneUsername = dataOfFriend["email"] as? String, let oneId = dataOfFriend["id"] as? String, let oneUserProfilePic = dataOfFriend["profilePic"] as? String {
                                 SearchFriendViewController.receiverEmailAddress = dataOfFriend["email"] as! String
                                 self.userNames.append(oneEmail)
                                 self.userEmails.append(oneUsername)
                                 self.userIds.append(oneId)
+                                self.userProfilePics.append(oneUserProfilePic)
                                 self.myTableView.reloadData()
 
                                 
@@ -285,11 +287,14 @@ var personalMessageArray = [String]()
                     let lastName = userAddingInfo["lastName"] as? String
                     let phoneNumber = userAddingInfo["phoneNumber"] as? String
                     let userName = userAddingInfo["userName"] as? String
+                    let profilePic = userAddingInfo["profilePic"] as? String
                     print("dateOfBirth = \(String(describing: dateOfBirth)) \n email = \(String(describing: email)) \n firstName = \(String(describing: firstName)) \n id = \(id!) \n lastName = \(String(describing: lastName)) \n phoneNumber = \(String(describing: phoneNumber)) \n userName = \(String(describing: userName))")
                     
-                    self.friendListArray = ["firstName":firstName!,"lastName":lastName!,"email":email!,"userName":userName!,"phoneNumber":phoneNumber!,"dateOfBirth":dateOfBirth!,"id":id!]
+                    self.friendListArray = ["firstName":firstName!,"lastName":lastName!,"email":email!,"userName":userName!,"phoneNumber":phoneNumber!,"dateOfBirth":dateOfBirth!,"id":id!,"profilePic":profilePic!]
                     self.userNames.append(email!)
                     self.userEmails.append(userName!)
+                    self.userProfilePics.append(profilePic!)
+
                     self.myTableView.reloadData()
                     
                     let  fireBaseRefrence = Database.database().reference().child("userInformation").child(SearchFriendViewController.loggedInid).child("friendList")
@@ -372,9 +377,7 @@ var personalMessageArray = [String]()
         
         cell.detailTextLabel?.text = self.userEmails[indexPath.row]
         
-        
-        var image : UIImage = UIImage(named: "dareSpotLogo")!
-        cell.imageView?.image = image
+        cell.imageView?.imageFromServerURL(urlString: self.userProfilePics[indexPath.row], PlaceHolderImage: UIImage(named: "dareSpotLogo")!)
 
         return cell
 
@@ -408,3 +411,26 @@ var personalMessageArray = [String]()
     
 
 }
+
+extension UIImageView {
+
+    public func imageFromServerURL(urlString: String, PlaceHolderImage:UIImage) {
+
+        if self.image == nil{
+            self.image = PlaceHolderImage
+        }
+
+        URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+
+            if error != nil {
+                print(error ?? "No Error")
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                self.image = image
+            })
+
+        }).resume()
+    }}
+
