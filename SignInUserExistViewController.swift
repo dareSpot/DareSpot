@@ -50,7 +50,7 @@ class SignInUserExistViewController: UIViewController {
 
                 }
                 else {
-                    print("error")
+                    print("error = \(String(describing: error))")
                     
                     
                     self.alert = UIAlertController(title: "Error",

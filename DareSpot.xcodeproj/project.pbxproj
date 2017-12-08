@@ -10,6 +10,8 @@
 		3C0511D61F6F84F50015FA01 /* SignInUserExistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D51F6F84F50015FA01 /* SignInUserExistViewController.swift */; };
 		3C0511D91F6F8A840015FA01 /* SignUpSuccessfullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */; };
 		3C2021921FC04EA6001F10D9 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */; };
+		3C4665001FD3DA9E0032766A /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4664FF1FD3DA9E0032766A /* DLRadioButton.m */; };
+		3C615CC41FD729C90013574D /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C615CC31FD729C90013574D /* loading.png */; };
 		3C6615F11FA91C2D00416774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */; };
 		3C6615F31FA91FC700416774 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */; };
 		3C6A50911FCCB50000D6BC08 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A50901FCCB50000D6BC08 /* Messages.swift */; };
@@ -72,6 +74,10 @@
 		3C0511D81F6F8A840015FA01 /* SignUpSuccessfullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSuccessfullViewController.swift; sourceTree = "<group>"; };
 		3C2021911FC04EA6001F10D9 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendMessageViewController.swift; path = ../SendMessageViewController.swift; sourceTree = "<group>"; };
 		3C2021981FC4C942001F10D9 /* DareSpot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DareSpot.entitlements; sourceTree = "<group>"; };
+		3C4664FD1FD3DA9C0032766A /* DareSpot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DareSpot-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C4664FE1FD3DA9E0032766A /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		3C4664FF1FD3DA9E0032766A /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		3C615CC31FD729C90013574D /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		3C6615F01FA91C2D00416774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C6615F21FA91FC700416774 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = ../ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3C6A50901FCCB50000D6BC08 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -291,6 +297,9 @@
 		EEC1991E1F6E744A00F981E6 /* DareSpot */ = {
 			isa = PBXGroup;
 			children = (
+				3C615CC31FD729C90013574D /* loading.png */,
+				3C4664FE1FD3DA9E0032766A /* DLRadioButton.h */,
+				3C4664FF1FD3DA9E0032766A /* DLRadioButton.m */,
 				3C9B8CC71FCF3E4800DA1897 /* newMessage.wav */,
 				3C9B8CC51FCF3D7500DA1897 /* Conversation.swift */,
 				3C9B8CC31FCF3C7F00DA1897 /* User.swift */,
@@ -316,6 +325,7 @@
 				EEC199261F6E744A00F981E6 /* DareSpot.xcdatamodeld */,
 				EEC199521F6E77E600F981E6 /* Images */,
 				EE38AA9B1F6E8C4200DB5EDD /* LaunchScreenViewController.swift */,
+				3C4664FD1FD3DA9C0032766A /* DareSpot-Bridging-Header.h */,
 			);
 			path = DareSpot;
 			sourceTree = "<group>";
@@ -424,6 +434,7 @@
 					EEC1991B1F6E744A00F981E6 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 276TT98E76;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -470,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C615CC41FD729C90013574D /* loading.png in Resources */,
 				EEC1992D1F6E744A00F981E6 /* LaunchScreen.storyboard in Resources */,
 				3C9B8CC81FCF3E4800DA1897 /* newMessage.wav in Resources */,
 				3CF6B2FF1FAFBA000039430A /* email@2x.png in Resources */,
@@ -676,6 +688,7 @@
 				EE38AAA61F6F2C5400DB5EDD /* UserInformation.swift in Sources */,
 				3C9B8CC41FCF3C7F00DA1897 /* User.swift in Sources */,
 				EE38AAA41F6EE85500DB5EDD /* SignUpSaveData.swift in Sources */,
+				3C4665001FD3DA9E0032766A /* DLRadioButton.m in Sources */,
 				3C6A50951FCE8FE000D6BC08 /* Helper Files.swift in Sources */,
 				EE38AA9C1F6E8C4200DB5EDD /* LaunchScreenViewController.swift in Sources */,
 				3C838C351FBCFEA800899F46 /* ChallengeViewController.swift in Sources */,
@@ -842,12 +855,16 @@
 			baseConfigurationReference = 9DB2B54A585649C1C652CD3D /* Pods-DareSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DareSpot/DareSpot.entitlements;
 				DEVELOPMENT_TEAM = 276TT98E76;
 				INFOPLIST_FILE = DareSpot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sushant.darespot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DareSpot/DareSpot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -857,12 +874,15 @@
 			baseConfigurationReference = D85564A78502E5BE9B3C08FF /* Pods-DareSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DareSpot/DareSpot.entitlements;
 				DEVELOPMENT_TEAM = 276TT98E76;
 				INFOPLIST_FILE = DareSpot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sushant.darespot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DareSpot/DareSpot-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

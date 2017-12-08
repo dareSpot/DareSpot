@@ -24,7 +24,7 @@
 import Foundation
 import UIKit
 import Firebase
-
+import AVFoundation
 class Message {
     
     //MARK: Properties
@@ -54,6 +54,8 @@ class Message {
                                 type = .photo
                                 case "location":
                                 type = .location
+                                case "video":
+                                type = .video
                             default: break
                             }
                             let content = receivedMessage["content"] as! String
@@ -75,6 +77,16 @@ class Message {
     
     func downloadImage(indexpathRow: Int, completion: @escaping (Bool, Int) -> Swift.Void)  {
         if self.type == .photo {
+            let imageLink = self.content as! String
+            let imageURL = URL.init(string: imageLink)
+            URLSession.shared.dataTask(with: imageURL!, completionHandler: { (data, response, error) in
+                if error == nil {
+                    self.image = UIImage.init(data: data!)
+                    completion(true, indexpathRow)
+                }
+            }).resume()
+        }
+        if self.type == .video {
             let imageLink = self.content as! String
             let imageURL = URL.init(string: imageLink)
             URLSession.shared.dataTask(with: imageURL!, completionHandler: { (data, response, error) in
@@ -142,7 +154,7 @@ class Message {
         }
     }
 
-    class func send(message: Message, toID: String, completion: @escaping (Bool) -> Swift.Void)  {
+    class func send(message: Message, toID: String, completion: @escaping (Bool, UIImage?) -> Swift.Void)  {
         if let currentUserID = Auth.auth().currentUser?.uid {
             switch message.type {
             case .photo:
@@ -153,19 +165,35 @@ class Message {
                         let path = metadata?.downloadURL()?.absoluteString
                         let values = ["type": "photo", "content": path!, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false] as [String : Any]
                         Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
-                            completion(status)
+                            completion(status, nil)
                         })
                     }
                 })
             case .text:
                 let values = ["type": "text", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false]
                 Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
-                    completion(status)
+                    completion(status, nil)
                 })
+            case .video:
+                let child = UUID().uuidString
+                Storage.storage().reference().child("messagePics").child(child).putFile(from: message.content as! URL, metadata: nil, completion: { (metadata, error) in
+                    if error == nil {
+                        let path = metadata?.downloadURL()?.absoluteString
+                        let values = ["type": "video", "content": path!, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false] as [String : Any]
+                        Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
+                            let thumbnailImage = self.generateThumnail(url: NSURL(string: values["content"] as! String)!)
+                            print(thumbnailImage!)
+                            
+                            completion(status, thumbnailImage)
+                        })
+                    }
+                })
+
+                
             default:
                 let values = ["type": "text", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false]
                 Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
-                    completion(status)
+                    completion(status, nil)
                 })
             }
             
@@ -174,6 +202,22 @@ class Message {
         }
     }
     
+ class func generateThumnail(url : NSURL) -> UIImage?{
+    let asset: AVAsset = AVAsset(url: url as URL)
+        let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+        assetImgGenerate.appliesPreferredTrackTransform = true
+        let time        : CMTime = CMTimeMake(1, 30)
+        let img         : CGImage
+        do {
+            try img = assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+            let frameImg = UIImage(cgImage: img)
+            return frameImg
+        } catch {
+            
+        }
+        return nil
+    }
+
     class func uploadMessage(withValues: [String: Any], toID: String, completion: @escaping (Bool) -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
             Database.database().reference().child("users").child(currentUserID).child("conversations").child(toID).observeSingleEvent(of: .value, with: { (snapshot) in
